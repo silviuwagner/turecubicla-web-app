@@ -4,12 +4,23 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-{% if user.is_authenticated %}
-	Hi {{ user.username }}!
-	<p><a href="{% url 'logout' %}">Logout</a></p>
-{% else %}
-	<p>You are not logged in</p>
-	<a href="{% url 'login' %}">Login</a> |
-	<a href="{% url 'signup' %}">Signup</a>
-{% endif %}
+
+	{% if user.is_authenticated %}
+		Hi {{ user.username }}!
+		<p><a href="{% url 'logout' %}">Logout</a></p>
+	{% else %}
+		<p>You are not logged in</p>
+		<a href="{% url 'login' %}">Login</a> |
+		<a href="{% url 'signup' %}">Signup</a>
+	{% endif %}
+
+	<br /> <br />
+
+	<div class="jumbotron">
+		<h1 class="display-4">Cycling trails all around Europe</h1>
+		<p class="lead">Find & add amazing cycling trails for others to enjoy as well</p> <p class="lead">
+		<a class="btn btn-primary btn-lg" href="{% url 'trail_list' %}" role="button">View trails</a>
+		</p>
+	</div>
+
 {% endblock %}
