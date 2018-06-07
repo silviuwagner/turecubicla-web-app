@@ -5,16 +5,16 @@
 
 {% block content %}
 
-	{% if user.is_authenticated %}
+	{% comment %} {% if user.is_authenticated %}
 		Hi {{ user.username }}!
 		<p><a href="{% url 'logout' %}">Logout</a></p>
 	{% else %}
 		<p>You are not logged in</p>
 		<a href="{% url 'login' %}">Login</a> |
 		<a href="{% url 'signup' %}">Signup</a>
-	{% endif %}
+	{% endif %} {% endcomment %}
 
-	<br /> <br />
+	{% comment %} <br /> <br /> {% endcomment %}
 
 	<div class="jumbotron">
 		<h1 class="display-4">Cycling trails all around Europe</h1>

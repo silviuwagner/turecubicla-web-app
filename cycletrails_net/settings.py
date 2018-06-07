@@ -149,3 +149,7 @@ EMAIL_HOST_USER = 'cycletrails'
 EMAIL_HOST_PASSWORD = 'vJ*8bd%_ktGXD2=$'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+# Static files
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]

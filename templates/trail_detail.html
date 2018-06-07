@@ -8,7 +8,16 @@
 			<p>{{ object.about }}</p>
 	</div>
 
-	<p><a href="{% url 'trail_edit' trail.pk %}">Edit</a> | <a href="{% url 'trail_delete' trail.pk %}">Delete</a></p>
-	<p>Back to <a href="{% url 'trail_list' %}">All Trails</a>.</p>
+	{% if user.is_authenticated %}
+		<p><a href="{% url 'trail_edit' trail.pk %}">Edit</a> | <a href="{% url 'trail_delete' trail.pk %}">Delete</a></p>
+	{% endif %}
+
+	{% comment %} <p>Back to <a href="{% url 'trail_list' %}">All Trails</a>.</p> {% endcomment %}
+
+	<div>
+		{% for comment in trail.comments.all %}
+			<p><span class="font-weight-bold">{{ comment.author }} &middot; &nbsp;</span>{{ comment }}</p>
+		{% endfor %}
+	</div>
 
 {% endblock content %}
