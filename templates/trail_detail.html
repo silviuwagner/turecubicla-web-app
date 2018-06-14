@@ -1,10 +1,14 @@
 {% extends 'base.html' %}
 
+{% block title %}{{ object.title }}{% endblock %}
+
 {% block content %}
 
 	<div class="trail-entry">
+		<img src="{{ object.image.url }}" height="300px"/>
+		{% comment %} {{ trail.image }} {% endcomment %}
 		<h2>{{ object.title }}</h2>
-			<p>by {{ object.author }} | {{ object.date }}</p>
+			<p><i class="far fa-user"></i> {{ object.author }} |  <i class="fas fa-calendar-alt"></i> {{ object.date }}</p>
 			<p>{{ object.about }}</p>
 	</div>
 
