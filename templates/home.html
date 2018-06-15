@@ -16,11 +16,13 @@
 
 	{% comment %} <br /> <br /> {% endcomment %}
 
-	<div class="jumbotron">
-		<h1 class="display-4">Cycling trails all around Europe</h1>
-		<p class="lead">Find & add amazing cycling trails for others to enjoy as well</p> <p class="lead">
-		<a class="btn btn-primary btn-lg" href="{% url 'trail_list' %}" role="button">View trails</a>
-		</p>
-	</div>
+	<section class="homepage-jumbotron">
+		<div class="jumbotron" style="text-align:center;">
+			<h1 class="display-4">Cycling trails all around Europe</h1>
+			<p class="lead">Find & add amazing cycling trails for others to enjoy as well</p> <p class="lead">
+			<a class="btn btn-primary btn-lg" href="{% url 'trail_list' %}" role="button">View trails</a>
+			</p>
+		</div>
+	</section>
 
 {% endblock %}
