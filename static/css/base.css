@@ -7,13 +7,13 @@
 
 #myFooter .footer-copyright{
 	background-color: #383737;
-	padding-top:3px;
-	padding-bottom:3px;
+	padding-top:0px;
+	padding-bottom:0px;
 	text-align: center;
 }
 
 #myFooter .footer-copyright p{
-	margin:10px;
+	margin:5px;
 	color: #ccc;
 }
 
@@ -28,7 +28,7 @@
 	font-size: 18px;
     color: white;
     font-weight: bold;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 #myFooter a{
@@ -47,8 +47,8 @@
 
 #myFooter .social-networks{
 	text-align: center;
-	padding-top: 30px;
-	padding-bottom: 38px;
+	padding-top: 3px;
+	padding-bottom: 3px;
 }
 
 #myFooter .social-networks a{
@@ -56,7 +56,7 @@
     margin-right: 5px;
     margin-left: 5px;
     color: #f9f9f9;
-    padding: 10px;
+    padding: 5px;
     transition: 0.2s;
 }
 
@@ -75,6 +75,14 @@
 
 #myFooter .twitter:hover{
 	color: #00aced;
+}
+
+#myFooter .instagram:hover{
+	color: #8a3ab9;
+}
+
+#myFooter .youtube:hover{
+	color: #e95950;
 }
 
 @media screen and (max-width: 767px){

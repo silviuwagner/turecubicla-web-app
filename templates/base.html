@@ -121,31 +121,15 @@
 	  <footer id="myFooter">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-3 myCols">
-						<h5>Get started</h5>
-						<ul>
-							<li><a href="#">Home</a></li>
-							<li><a href="#">Sign up</a></li>
-							<li><a href="#">Downloads</a></li>
-						</ul>
-					</div>
-					<div class="col-sm-3 myCols">
+					<div class="col-sm-4 myCols">
 						<h5>About us</h5>
 						<ul>
-							<li><a href="#">Company Information</a></li>
-							<li><a href="#">Contact us</a></li>
-							<li><a href="#">Reviews</a></li>
+							<li><a href="{% url 'story' %}">The story</a></li>
+							<li><a href="{% url 'team' %}">Meet our team</a></li>
+							<li><a href="{% url 'contact' %}">Contact us</a></li>
 						</ul>
 					</div>
-					<div class="col-sm-3 myCols">
-						<h5>Support</h5>
-						<ul>
-							<li><a href="#">FAQ</a></li>
-							<li><a href="#">Help desk</a></li>
-							<li><a href="#">Forums</a></li>
-						</ul>
-					</div>
-					<div class="col-sm-3 myCols">
+					<div class="col-sm-4 myCols">
 						<h5>Legal</h5>
 						<ul>
 							<li><a href="#">Terms of Service</a></li>
@@ -153,16 +137,22 @@
 							<li><a href="#">Privacy Policy</a></li>
 						</ul>
 					</div>
+					<div class="col-sm-4 myCols">
+							<h5>Support us</h5>
+							<ul>
+								<li><a href="#">Donate</a></li>
+							</ul>
+					</div>
 				</div>
 			</div>
 			<div class="social-networks">
-				<a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-				<a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-				<a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+				<a href="https://www.facebook.com/ciclotrasee" class="facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+				<a href="https://www.instagram.com/ciclotrasee" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+				<a href="https://www.youtube.com/channel/UCCJxtC0TqD9s1P5WkfzZkbg" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
 			</div>
 			<div class="footer-copyright">
-				<p><div class="footer-copyright text-center py-3">© 2018 Cycletrails
-						<br /> <small>Made in Romania with <i class="fas fa-heart" style="color:red;"></i> for <i class="fas fa-bicycle"> & <i class="fas fa-leaf"></i></small></i></p>
+				<p><div class="footer-copyright text-center py-3">© 2018 Cycletrails</p>
+				<p><small>Made in Romania with <i class="fas fa-heart" style="color:red;"></i> for <i class="fas fa-bicycle"></small></i></p>
 			</div>
 		</footer>
     

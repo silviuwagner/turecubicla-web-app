@@ -21,8 +21,6 @@ class Trail(models.Model):
 	def get_absolute_url(self):
 		return reverse('trail_detail', args=[str(self.id)])
 
-	
-
 class Comment(models.Model):
 	trail = models.ForeignKey(Trail, on_delete=models.CASCADE, related_name='comments')
 	comment = models.CharField(max_length=140)
