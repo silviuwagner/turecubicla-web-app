@@ -8,7 +8,7 @@ from . import models
 class TrailCreateView(LoginRequiredMixin, CreateView):
 	model = models.Trail
 	template_name = 'trail_new.html'
-	fields = ['title', 'about', 'image']
+	fields = ['title', 'about', 'image', 'difficulty']
 	login_url = 'login'
 
 	def form_valid(self, form):

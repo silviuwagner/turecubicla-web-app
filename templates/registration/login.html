@@ -1,24 +1,41 @@
-<!-- templates/registration/login.html -->
+<!-- templates/home.html -->
+
 {% extends 'base.html' %}
 
 {% load crispy_forms_tags %}
 
-{% block title %}Login{% endblock %}
+{% block title %}Sign Up{% endblock %}
 
 {% block content %}
 
-	<h2>Login</h2>
-	<form method="post">
+{% load static %}
 
-		{% csrf_token %}
-		{{ form|crispy }}
-		<button class="btn btn-primary ml-2" type="submit">Login</button>
+<section class="section-padding" id="about_page">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1">
+                <div class="page-title text-center">
+                    <h5 class="title">Login</h5>
+				</div>
+				
+				{% comment %} <h2>Sign up</h2> {% endcomment %}
 
-	</form>
+				<form method="post">
+			
+					{% csrf_token %}
+					{{ form|crispy }}
+					<button class="btn btn-primary ml-2" type="submit">Login</button>
+			
+				</form>
+			
+				<br />
+			
+				<p><a href="{% url 'signup' %}">Sign up</a> |
+				<a href="{% url 'password_reset' %}">Reset password</a></p>
 
-	<br /><br />
-
-	<a href="{% url 'signup' %}">Sign up</a> |
-	<a href="{% url 'password_reset' %}">Reset password</a>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}

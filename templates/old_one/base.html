@@ -1,0 +1,194 @@
+<!-- templates/base.html -->
+
+<!doctype html>
+
+{% load static %}
+
+<html lang="en">
+	
+	<head>
+		
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+		
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+
+		<link rel="stylesheet" href="{% static 'css/base.css' %}">
+		<link rel="stylesheet" href="{% static 'css/footer.css' %}">
+		<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+		<link rel="apple-touch-icon" sizes="57x57" href="static/img/icons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="static/img/icons/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="static/img/icons/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="static/img/icons/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="static/img/icons/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="static/img/icons/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="static/img/icons/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="static/img/icons/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="static/img/icons/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="static/img/icons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="static/img/icons/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="static/img/icons/favicon-16x16.png">
+		<link rel="manifest" href="static/img/icons/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="static/img/icons/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+
+		<title>{% block title %}{% endblock title %} - Cycletrails</title>
+
+	</head>
+
+	<body>
+
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+			
+			<a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'img/clo-icon-small.png' %}" height="32px"/></a>
+
+			<form class="form-inline ml-auto">
+				<a href="{% url 'trail_list' %}" class="btn btn-primary ml-2"><i class="fas fa-map-marker"></i> Trails</a> &nbsp; &nbsp;
+				<a href="{% url 'trail_new' %}" class="btn btn-outline-primary"><i class="fas fa-plus"></i></a>
+				{% comment %} <a href="{% url 'trail_new' %}"><i class="material-icons md-36">add_box</i></a> {% endcomment %}
+			</form>
+
+			{% comment %} {% if user.is_authenticated %} {% endcomment %}
+				{% comment %} <ul class="navbar-nav mr-auto">
+					<li class="nav-item"><a href="{% url 'trail_new' %}">+ Trail</a></li>
+				</ul> {% endcomment %}
+
+				{% comment %} <button type="button" class="btn btn-default btn-sm">
+					<a href="{% url 'trail_new' %}" style="text-decoration:none;"><i class="fas fa-plus"></i> Trail</a>
+				</button> {% endcomment %}
+			{% comment %} {% endif %} {% endcomment %}
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+
+				{% comment %} {% if user.is_authenticated %}
+					
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+
+							<a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ user.username }}</a>
+							
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+								<a class="dropdown-item" href="{% url 'password_change' %}">Change password</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
+							</div>
+
+						</li>
+					</ul>
+
+				{% else %}
+					
+					<form class="form-inline ml-auto">
+						<a href="{% url 'login' %}" class="btn btn-outline-secondary">Log in</a>
+						<a href="{% url 'signup' %}" class="btn btn-primary ml-2">Sign up</a>
+					</form>
+						
+				{% endif %} {% endcomment %}
+
+				{% comment %} <form class="form-inline ml-auto">
+					<a href="{% url 'trail_new' %}" class="btn btn-outline-primary" style="text-decoration:none;"><i class="fas fa-plus"></i> Trail</a>
+					<a href="{% url 'trail_list' %}" class="btn btn-outline-secondary">Trails</a>
+				</form> {% endcomment %}
+
+				{% comment %} <form class="form-inline ml-auto">
+					<a href="{% url 'trail_new' %}" class="btn btn-outline-secondary"><i class="fas fa-plus"></i></a>
+					<a href="{% url 'trail_list' %}" class="btn btn-primary ml-2">Trails</a>
+				</form> {% endcomment %}
+
+				{% comment %} <li class="divider-vertical"></li> {% endcomment %}
+
+				{% if user.is_authenticated %}
+					
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+
+							<a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-user"></i> {{ user.username }}</a>
+							
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+								<a class="dropdown-item" href="#"><i class="fas fa-map-marker"></i>&nbsp; View my trails</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="{% url 'password_change' %}"><i class="fas fa-unlock"></i>&nbsp; Change password</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-times-circle"></i>&nbsp; Log out</a>
+							</div>
+
+						</li>
+					</ul>
+
+				{% else %}
+					
+					<form class="form-inline ml-auto">
+						<a href="{% url 'login' %}" class="btn btn-outline-secondary">Log in</a>
+						<a href="{% url 'signup' %}" class="btn btn-primary ml-2">Sign up</a>
+					</form>
+						
+				{% endif %}
+
+			</div>
+		</nav>
+
+		<div class="container">
+
+			{% block content %}
+			{% endblock %}
+
+		</div>
+
+		{% comment %} FOOTER {% endcomment %}
+
+	  <footer id="myFooter">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4 myCols">
+						<h5>About us</h5>
+						<ul>
+							<li><a href="{% url 'story' %}">The story</a></li>
+							<li><a href="{% url 'team' %}">Meet our team</a></li>
+							<li><a href="{% url 'contact' %}">Contact us</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-4 myCols">
+						<h5>Legal</h5>
+						<ul>
+							<li><a href="#">Terms of Service</a></li>
+							<li><a href="#">Terms of Use</a></li>
+							<li><a href="#">Privacy Policy</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-4 myCols">
+							<h5>Support us</h5>
+							<ul>
+								<li><a href="#">Donate</a></li>
+							</ul>
+					</div>
+				</div>
+			</div>
+			<div class="social-networks">
+				<a href="https://www.facebook.com/ciclotrasee" class="facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+				<a href="https://www.instagram.com/ciclotrasee" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+				<a href="https://www.youtube.com/channel/UCCJxtC0TqD9s1P5WkfzZkbg" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+			</div>
+			<div class="footer-copyright">
+				<p><div class="footer-copyright text-center py-3">© 2018 Cycletrails</p>
+				<p><small>Made in Romania with <i class="fas fa-heart" style="color:red;"></i> for <i class="fas fa-bicycle"></small></i></p>
+			</div>
+		</footer>
+    
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	</body>
+
+</html>

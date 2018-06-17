@@ -6,6 +6,9 @@ class Trail(models.Model):
 	title = models.CharField(max_length=255)
 	about = models.TextField()
 	date = models.DateTimeField(auto_now_add=True)
+	distance = models.PositiveSmallIntegerField
+	duration = models.TimeField
+	difficulty = models.CharField(max_length=5)
 	author = models.ForeignKey(
 		settings.AUTH_USER_MODEL,
 		on_delete=models.CASCADE,
