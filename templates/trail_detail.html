@@ -1,0 +1,46 @@
+<!-- templates/about.html -->
+
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}{{ object.title }}{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<section class="section-padding" id="about_page">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1">
+                <div class="page-title text-center">
+                    <h5 class="title">{{ object.title }}</h5>
+				</div>
+				
+					<div class="trail-entry">
+						<img src="{{ object.image.url }}" height="300px"/>
+						{% comment %} {{ trail.image }} {% endcomment %}
+						<h2>{{ object.title }}</h2>
+							<p><i class="far fa-user"></i> {{ object.author }} &nbsp;&nbsp; <i class="fas fa-calendar-alt"></i> {{ object.date }}</p>
+							<p>{{ object.about }}</p>
+					</div>
+				
+					{% if user.is_authenticated %}
+						<p><a href="{% url 'trail_edit' trail.pk %}" class="btn btn-primary btn-xs"><i class="far fa-edit"></i> Edit</a> &nbsp;&nbsp; <a href="{% url 'trail_delete' trail.pk %}" class="btn btn-primary btn-xs"><i class="far fa-trash-alt"></i> Delete</a></p>
+					{% endif %}
+				
+					{% comment %} <p>Back to <a href="{% url 'trail_list' %}">All Trails</a>.</p> {% endcomment %}
+				
+					<div>
+						{% for comment in trail.comments.all %}
+							<p><span class="font-weight-bold">{{ comment.author }} &middot; &nbsp;</span>{{ comment }}</p>
+						{% endfor %}
+					</div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

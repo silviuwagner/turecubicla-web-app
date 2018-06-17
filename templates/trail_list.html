@@ -1,0 +1,107 @@
+<!-- templates/about.html -->
+
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Trails{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<section class="section-padding" id="about_page">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1">
+                <div class="page-title text-center">
+                    <h5 class="title">Trails</h5>
+				</div>
+
+				{% comment %} {% if trail %} {% endcomment %}
+					<div class="row">
+						{% for trail in object_list %}
+
+							<div class="item-container col-md-6">
+								
+								<div class="card">
+									<img class="card-img-top" src="{{ trail.image.url }}" height="300px"/>
+		
+									<div class="card-header">
+										<span class="font-weight-bold"><a href="{% url 'trail_detail' trail.pk %}">{{ trail.title }}</a></span> <br />
+										<small class="text-muted"><i class="far fa-user"></i> {{ trail.author }} &nbsp;&nbsp; <i class="fas fa-calendar-alt"></i> {{ trail.date }}</small>
+									</div>
+		
+									<ul class="list-group list-group-flush">
+											<li class="list-group-item"><i class="fas fa-ruler"></i> Distance &nbsp;&nbsp; <big>20</big> km</li>
+											<li class="list-group-item"><i class="fas fa-stopwatch"></i> Duration &nbsp;&nbsp; <big>3:40</big> hours</li>
+											<li class="list-group-item"><i class="fas fa-tachometer-alt"></i> Difficulty &nbsp;&nbsp; <big>Easy</big> </li>
+									</ul>
+		
+									<div class="card-body">
+										{{ trail.about|truncatewords:16 }}
+										{% comment %} {{ trail.about|slice:"200" }} {% endcomment %}
+									</div>
+								</div>
+
+							</div>
+
+							
+							
+						{% if forloop.counter|divisibleby:2 %}
+							</div>
+
+							<br />
+							<div class="row">
+						{% endif %}
+						{% endfor %}
+					{% comment %}
+					</div>
+					{% else %}
+					<div class="nothing-found">
+						Nothing found.
+					</div> {% endcomment %}
+				{% comment %} {% endif %} {% endcomment %}
+
+				
+				{% comment %} <div class="grid"> {% endcomment %}
+					{% comment %} {% for trail in object_list %} {% endcomment %}
+						{% comment %} <div class="module"> {% endcomment %}
+						{% comment %} <div style="border-style:solid;">
+							<img class="card-img-top" src="{{ trail.image.url }}" height="300px"/>
+
+							<div class="card-header">
+								<span class="font-weight-bold"><a href="{% url 'trail_detail' trail.pk %}">{{ trail.title }}</a></span> <br />
+								<small class="text-muted"><i class="far fa-user"></i> {{ trail.author }} &nbsp;&nbsp; <i class="fas fa-calendar-alt"></i> {{ trail.date }}</small>
+							</div>
+
+							<ul class="list-group list-group-flush">
+									<li class="list-group-item"><i class="fas fa-ruler"></i> Distance &nbsp;&nbsp; <big>20</big> km</li>
+									<li class="list-group-item"><i class="fas fa-stopwatch"></i> Duration &nbsp;&nbsp; <big>3:40</big> hours</li>
+									<li class="list-group-item"><i class="fas fa-tachometer-alt"></i> Difficulty &nbsp;&nbsp; <big>Easy</big> </li>
+							</ul>
+
+							<div class="card-body">
+								{{ trail.about }}
+							</div> {% endcomment %}
+
+							{% comment %} <div class="card-footer">
+								<small class="text-muted"><i class="far fa-user"></i> {{ trail.author }} |  <i class="fas fa-calendar-alt"></i> {{ trail.date }}</small>
+							</div> {% endcomment %}
+
+							{% comment %} <div class="card-footer text-center text-muted">
+								<a href="{% url 'trail_edit' trail.pk %}">Edit</a> | 
+								<a href="{% url 'trail_delete' trail.pk %}">Delete</a>
+							</div> {% endcomment %}
+
+						{% comment %} </div> {% endcomment %}
+						{% comment %} </div>
+						<br />
+					{% endfor %} {% endcomment %}
+				{% comment %} </div> {% endcomment %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

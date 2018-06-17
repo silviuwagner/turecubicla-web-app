@@ -1,0 +1,32 @@
+<!-- templates/about.html -->
+
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Edit Trail{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<section class="section-padding" id="about_page">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1">
+                <div class="page-title text-center">
+                    <h5 class="title">Edit Trail</h5>
+				</div>
+				
+				<form action="" method="post" enctype="multipart/form-data">
+					{% csrf_token %}
+					{{ form.as_p }}
+					<button class="btn btn-info ml-2" type="submit">Update</button>
+				</form>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
