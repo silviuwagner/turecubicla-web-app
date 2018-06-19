@@ -17,12 +17,14 @@
                 <div class="page-title text-center">
                     <h5 class="title">Edit Trail</h5>
 				</div>
-				
-				<form action="" method="post" enctype="multipart/form-data">
-					{% csrf_token %}
-					{{ form.as_p }}
-					<button class="btn btn-info ml-2" type="submit">Update</button>
-				</form>
+                
+                <div class="login-form">
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button class="btn btn-info btn-block" type="submit">Update</button>
+                    </form>
+                </div>
 
             </div>
         </div>

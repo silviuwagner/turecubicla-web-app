@@ -8,7 +8,7 @@ from . import models
 class TrailCreateView(LoginRequiredMixin, CreateView):
 	model = models.Trail
 	template_name = 'trail_new.html'
-	fields = ['title', 'about', 'image', 'difficulty']
+	fields = ['title', 'about', 'image', 'track']
 	login_url = 'login'
 
 	def form_valid(self, form):
@@ -30,7 +30,7 @@ class TrailDetailView(DetailView):
 
 class TrailUpdateView(LoginRequiredMixin, UpdateView):
 	model = models.Trail
-	fields = ['title', 'about', 'image',]
+	fields = ['title', 'about', 'image', 'track']
 	template_name = 'trail_edit.html'
 	login_url = 'login'
 
@@ -39,6 +39,11 @@ class TrailDeleteView(LoginRequiredMixin, DeleteView):
 	template_name = 'trail_delete.html'
 	login_url = 'login'
 	success_url = reverse_lazy('trail_list')
+
+class UserTrailsView(LoginRequiredMixin, ListView):
+	model = models.Trail
+	template_name = 'user_trails.html'
+	login_url = 'login'
 
 success_url = reverse_lazy('trail_list')
 

@@ -25,9 +25,44 @@
 							<p><i class="far fa-user"></i> {{ object.author }} &nbsp;&nbsp; <i class="fas fa-calendar-alt"></i> {{ object.date }}</p>
 							<p>{{ object.about }}</p>
 					</div>
+
+					
+
+					{% comment %} <a href="http://127.0.0.1:8000{{ object.track.url }}">http://127.0.0.1:8000{{ object.track.url }}</a> {% endcomment %}
+
+					<script>
+						var map;
+						var src = 'http://127.0.0.1:8000{{ object.track.url }}';//LINK CATRE FISIERUL KML/KMZ
+						function initMap() {
+							map = new google.maps.Map(document.getElementById('map'), {
+								center: new google.maps.LatLng(45.3539926,22.8386059),//COORDONATELE DE VIZUALIZARE
+								zoom: 13.75,//ZOOMUL DORIT
+								mapTypeId: google.maps.MapTypeId.SATELLITE
+							});
+							var kmlLayer = new google.maps.KmlLayer(src, {
+								suppressInfoWindows: true,
+								map: map
+							});
+							kmlLayer.addListener('click', function(event) {
+								var content = event.featureData.infoWindowHtml;
+								var testimonial = document.getElementById('capture');
+								testimonial.innerHTML = content;
+							});
+						}
+					</script>
+
+					<style>
+						#map {
+							height: 300px;
+							width: 500PX;
+							overflow: hidden;
+							float: left;
+							border: thin solid #333;
+						}
+					</style>
 				
-					{% if user.is_authenticated %}
-						<p><a href="{% url 'trail_edit' trail.pk %}" class="btn btn-primary btn-xs"><i class="far fa-edit"></i> Edit</a> &nbsp;&nbsp; <a href="{% url 'trail_delete' trail.pk %}" class="btn btn-primary btn-xs"><i class="far fa-trash-alt"></i> Delete</a></p>
+					{% if user.is_authenticated and user == object.author %}
+						<p><a href="{% url 'trail_edit' trail.pk %}" class="btn btn-primary"><i class="far fa-edit"></i> Edit</a> &nbsp;&nbsp; <a href="{% url 'trail_delete' trail.pk %}" class="btn btn-primary btn-xs"><i class="far fa-trash-alt"></i> Delete</a></p>
 					{% endif %}
 				
 					{% comment %} <p>Back to <a href="{% url 'trail_list' %}">All Trails</a>.</p> {% endcomment %}
