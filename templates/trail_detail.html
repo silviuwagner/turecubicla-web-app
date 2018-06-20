@@ -22,7 +22,12 @@
 						<img src="{{ object.image.url }}" height="300px"/>
 						{% comment %} {{ trail.image }} {% endcomment %}
 						<h2>{{ object.title }}</h2>
-							<p><i class="far fa-user"></i> {{ object.author }} &nbsp;&nbsp; <i class="fas fa-calendar-alt"></i> {{ object.date }}</p>
+						<p><i class="far fa-user"></i> {{ object.author }} &nbsp;&nbsp; <i class="fas fa-calendar-alt"></i> {{ object.date }}</p>
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item"><i class="fas fa-map-marker-alt"></i> Region &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ trail.region }}</li>
+								<li class="list-group-item"><i class="fas fa-ruler"></i> Distance &nbsp;&nbsp; {{ trail.distance }} km</li>
+								<li class="list-group-item"><i class="fas fa-tachometer-alt"></i> Difficulty &nbsp;&nbsp; {{ trail.difficulty }}</li>
+							</ul>
 							<p>{{ object.about }}</p>
 					</div>
 
@@ -30,7 +35,7 @@
 
 					{% comment %} <a href="http://127.0.0.1:8000{{ object.track.url }}">http://127.0.0.1:8000{{ object.track.url }}</a> {% endcomment %}
 
-					<script>
+					{% comment %} <script>
 						var map;
 						var src = 'http://127.0.0.1:8000{{ object.track.url }}';//LINK CATRE FISIERUL KML/KMZ
 						function initMap() {
@@ -59,10 +64,10 @@
 							float: left;
 							border: thin solid #333;
 						}
-					</style>
+					</style> {% endcomment %}
 				
 					{% if user.is_authenticated and user == object.author %}
-						<p><a href="{% url 'trail_edit' trail.pk %}" class="btn btn-primary"><i class="far fa-edit"></i> Edit</a> &nbsp;&nbsp; <a href="{% url 'trail_delete' trail.pk %}" class="btn btn-primary btn-xs"><i class="far fa-trash-alt"></i> Delete</a></p>
+						<p><a href="{% url 'trail_edit' trail.pk %}" class="btn btn-primary"><i class="far fa-edit"></i> Edit</a> &nbsp;&nbsp; <a href="{% url 'trail_delete' trail.pk %}" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</a></p>
 					{% endif %}
 				
 					{% comment %} <p>Back to <a href="{% url 'trail_list' %}">All Trails</a>.</p> {% endcomment %}

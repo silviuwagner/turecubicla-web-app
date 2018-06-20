@@ -38,6 +38,12 @@
 											<li class="list-group-item"><i class="fas fa-stopwatch"></i> Duration &nbsp;&nbsp; <big>3:40</big> hours</li>
 											<li class="list-group-item"><i class="fas fa-tachometer-alt"></i> Difficulty &nbsp;&nbsp; <big>Easy</big> </li>
 									</ul> {% endcomment %}
+
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item"><i class="fas fa-map-marker-alt"></i> Region &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ trail.region }}</li>
+										<li class="list-group-item"><i class="fas fa-ruler"></i> Distance &nbsp;&nbsp; {{ trail.distance }} km</li>
+										<li class="list-group-item"><i class="fas fa-tachometer-alt"></i> Difficulty &nbsp;&nbsp; {{ trail.difficulty }}</li>
+									</ul>
 		
 									<div class="card-body">
 										{{ trail.about|truncatewords:16 }}

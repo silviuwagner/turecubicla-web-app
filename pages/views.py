@@ -1,12 +1,16 @@
 from django.views.generic import TemplateView
+from django.views.generic import ListView
 
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .forms import ContactForm
 
-class HomePageView(TemplateView):
-	template_name = 'home.html'
+from trails import models
+
+class HomePageView(ListView):
+    model = models.Trail
+    template_name = 'home.html'
 
 class AboutPageView(TemplateView):
 	template_name = 'about.html'

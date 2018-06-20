@@ -7,18 +7,24 @@ class Trail(models.Model):
 	title = models.CharField(max_length=255)
 	about = models.TextField()
 	date = models.DateTimeField(auto_now_add=True)
-	difficulty = models.CharField(max_length=5)
 	author = models.ForeignKey(
 		settings.AUTH_USER_MODEL,
 		on_delete=models.CASCADE,
 	)
 
+	region = models.CharField(max_length=100, default='Romania')
+	distance = models.PositiveIntegerField(default='0')
+
+	difficulty = models.CharField(max_length=10,default='Easy')
+
+	homepage_staff_pick = models.BooleanField(default=0)
+
 	#image upload
-	image = models.ImageField(upload_to='image/', default='imagelink')
+	image = models.ImageField(upload_to='image/', default='imagelink.jpg')
 	image_uploaded_at = models.DateTimeField(auto_now_add=True)
 
 	#kml/gpx
-	track = models.FileField(upload_to='tracks/', default='tracklink', validators=[validate_file_extension])
+	track = models.FileField(upload_to='tracks/', default='tracklink.kml', validators=[validate_file_extension])
 
 	def __str__(self):
 		return self.title
