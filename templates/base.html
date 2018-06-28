@@ -32,9 +32,17 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
     <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 
     <!-- Google -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCY7Lilu4fOw0DubSVajzwThf7iVAEx8fU&callback=initMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYwNCsSaVyECn8RtHOCU5eUNS_pldEjo0&callback=initMap"></script>
+
+    <!-- MapBox -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.css' rel='stylesheet' />
 
     <!--[if lt IE 9]>
         <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -175,7 +183,8 @@
             <div class="row">
                 <div class="col-xs-12 col-md-5">
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    <span>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Cycletrails <br /> Design by <a href="https://colorlib.com" target="_blank">Colorlib</a></span>
+                    <span>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Cycletrails 
+                        {% comment %} <br /> Design by <a href="https://colorlib.com" target="_blank">Colorlib</a></span> {% endcomment %}
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     <div class="space-30 hidden visible-xs"></div>
                 </div>

@@ -91,6 +91,7 @@ h2 {
 
 h3 {
     font-size: 32px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 html,
@@ -99,7 +100,7 @@ body {
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 32px;
@@ -1329,4 +1330,12 @@ input:-webkit-autofill:focus {
 
 .form-double .box.last {
     float: right;
+}
+
+/* maps */
+
+#map {
+	margin-bottom: 20px;
+    height: 300px;
+    width: 100%;
 }

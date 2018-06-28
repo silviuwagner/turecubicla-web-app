@@ -99,7 +99,7 @@ body {
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Maven Pro', sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 32px;
@@ -1632,4 +1632,13 @@ input:-webkit-autofill:focus {
 .btn {        
     font-size: 15px;
     font-weight: bold;
+}
+
+/* MAPS */
+
+#map {
+	margin-bottom: 20px;
+    height: 300px;
+    width: 100%;
+    border-radius:20px;
 }
