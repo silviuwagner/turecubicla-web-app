@@ -7,6 +7,21 @@
 <html class="no-js" lang="zxx">
 
 <head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-43247972-14"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-43247972-14');
+    </script>
+
+
+
+
+
     <meta charset="utf-8">
     {% comment %} <meta name="author" content="Sumon Rahman"> {% endcomment %}
     <meta name="author" content="Paul Wagner">
@@ -197,7 +212,8 @@
                             <li><a href="#">Features</a></li>
                             <li><a href="#">Pricing</a></li>
                             <li><a href="#">Testimonial</a></li> {% endcomment %}
-                            <li><a href="{% url 'email' %}">Contact</a></li>
+                            {% comment %} <li><a href="{% url 'email' %}">Contact</a></li> {% endcomment %}
+                            <li><a href="https://m.me/ciclotrasee" target="_blank"><i class="far fa-comment"></i> <strong>Contact us • Give feedback • Report bug</strong></a></li>
                         </ul>
                         {% comment %} <div style="text-align: right;">
                             <a href="https://www.facebook.com/ciclotrasee" target="_blank"><i class="fab fa-facebook" style="font-size:1.7em;"></i></a>

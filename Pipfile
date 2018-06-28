@@ -10,6 +10,8 @@ gunicorn = "*"
 whitenoise = "*"
 django-allauth = "*"
 pillow = "*"
+heroku = "*"
+django-heroku = "*"
 
 [dev-packages]
 pylint = "*"
