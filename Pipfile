@@ -12,6 +12,7 @@ django-allauth = "*"
 pillow = "*"
 heroku = "*"
 django-heroku = "*"
+"kml2geojson" = "*"
 
 [dev-packages]
 pylint = "*"

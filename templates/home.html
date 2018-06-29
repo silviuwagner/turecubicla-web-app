@@ -52,12 +52,12 @@
 
                                 <div class="item-container col-md-3" style="margin-bottom:30px">
                                     
-                                    <div class="card">
+                                    <div class="card" style="border-radius:5px;">
                                         <img class="card-img-top" src="{{ trail.image.url }}" height="300px"/>
             
                                         <div class="card-header">
                                             <span class="font-weight-bold"><a href="{% url 'trail_detail' trail.pk %}">{{ trail.title|slice:"25" }}</a></span> <br />
-                                            <small class="text-muted">by {{ trail.author }}</small>
+                                            
                                         </div>
             
                                         {% comment %} <ul class="list-group list-group-flush">
@@ -67,9 +67,19 @@
                                         </ul> {% endcomment %}
             
                                         <div class="card-body">
+                                                <!-- <small>
+                                                    <p><i class="fas fa-map-marker-alt"></i> Region <strong>{{ trail.region|slice:"10" }}</strong></p>
+                                                    <p><i class="fas fa-ruler"></i> Distance <strong>{{ trail.distance }} km</strong></p>
+                                                    <p><i class="fas fa-tachometer-alt"></i> Difficulty <strong>{{ trail.difficulty }}</strong></p>
+                                                </small> -->
                                             {{ trail.about|truncatewords:6 }}
                                             {% comment %} {{ trail.about|slice:"200" }} {% endcomment %}
                                         </div>
+
+                                        <div class="card-footer">
+                                            <small class="text-muted">by <strong>{{ trail.author }}</strong> </small>
+                                        </div>
+
                                     </div>
                                 </div>
 	

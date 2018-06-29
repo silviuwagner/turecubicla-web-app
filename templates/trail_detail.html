@@ -14,19 +14,30 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-10 col-md-offset-1">
-                <div class="page-title text-center">
+                <!-- <div class="page-title text-center">
                     <h3 class="title">{{ object.title }}</h3>
-				</div>
+				</div> -->
+
+				<h3 style="text-align:center;">{{ object.title }}</h3>
 
 				<div class="card mb-3">
 					<img class="card-img-top" src="{{ object.image.url }}" alt="Card image cap">
 					<div class="card-body">
 					  {% comment %} <h5 class="card-title">Card title</h5> {% endcomment %}
 
-						<p class="card-text" style=""><i class="fas fa-map-marker-alt"></i> Region <strong>{{ trail.region }}</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+						<!-- <p class="card-text" style=""><i class="fas fa-map-marker-alt"></i> Region <strong>{{ trail.region }}</strong> &nbsp;&nbsp;&nbsp;&nbsp;
 						<i class="fas fa-ruler"></i> Distance <strong>{{ trail.distance }} km</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-						<i class="fas fa-tachometer-alt"></i> Difficulty <strong>{{ trail.difficulty }}</strong></p>
+						<i class="fas fa-tachometer-alt"></i> Difficulty <strong>{{ trail.difficulty }}</strong></p> -->
+						
+						
+						<i class="fas fa-map-marker-alt"></i> Region <strong>{{ trail.region }}</strong> |
+						<i class="fas fa-ruler"></i> Distance <strong>{{ trail.distance }} km</strong> |
+						<i class="fas fa-tachometer-alt"></i> Difficulty <strong>{{ trail.difficulty }}</strong>
+						
+
 						<p class="card-text">{{ object.about }}</p>
+
+						
 
 						<div id='map'></div>
 						<script>
@@ -94,21 +105,27 @@
 							<a href="#" class="btn btn-primary"><i class="fa fa-download"></i> GPX</a>
 						</p>
 
-						{% if user.is_authenticated and user == object.author %}
-							<p><a href="{% url 'trail_edit' trail.pk %}" class="btn btn-primary"><i class="far fa-edit"></i> Edit</a> 
-								<a href="{% url 'trail_delete' trail.pk %}" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</a></p>
-						{% endif %}
+						
 					
 						{% comment %} <p>Back to <a href="{% url 'trail_list' %}">All Trails</a>.</p> {% endcomment %}
 					
-						<div>
-							{% for comment in trail.comments.all %}
-								<p><span class="font-weight-bold">{{ comment.author }} &middot; &nbsp;</span>{{ comment }}</p>
-							{% endfor %}
-						</div>
+						
 						
 					  {% comment %} <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> {% endcomment %}
-					  	<p class="card-text"><small class="text-muted"><i class="far fa-user"></i> {{ object.author }} &nbsp;&nbsp; <i class="fas fa-calendar-alt"></i> {{ object.date }}</small></p>
+						  <p class="card-text"><small class="text-muted"><i class="far fa-user"></i> {{ object.author }} &nbsp;&nbsp; <i class="fas fa-calendar-alt"></i> {{ object.date }} {% if user.is_authenticated and user == object.author %}
+							<p><a href="{% url 'trail_edit' trail.pk %}" ><i class="far fa-edit"></i> Edit</a>  &nbsp;&nbsp;
+						  	<a href="{% url 'trail_delete' trail.pk %}" ><i class="far fa-trash-alt"></i> Delete</a></p>
+					  		{% endif %} </small></p>
+						  
+						
+						
+						<div>
+							{% for comment in trail.comments.all %}
+								<hr />
+								<h4>Comments</h4>
+								<p><span class="font-weight-bold"><strong>{{ comment.author }}</strong> &minus; &nbsp;</span>{{ comment }}</p>
+							{% endfor %}
+						</div>
 					</div>
 				  </div>
 				
