@@ -101,7 +101,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'img/biketrail-logo-proto1-small-white-text-only.png' %}" alt="Logo"></a>
+                <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'img/header-logo-biketrail-new-small.png' %}" alt="Logo"></a>
                 
                 {% comment %} <a href="{% url 'trail_list' %}"><!-- <span class="lnr lnr-map-marker" style="font-size:1em"></span> --> <big>TRAILS</big></a>
                 <a href="{% url 'trail_new' %}"><span class="lnr lnr-plus-circle" style="font-size:1em;"></span></i></a> {% endcomment %}
@@ -156,6 +156,8 @@
         </div>
     </nav>
     <!-- MainMenu-Area-End -->
+
+    <div style="margin-bottom:30px;"></div>
 
     {% block content %}
     {% endblock %}

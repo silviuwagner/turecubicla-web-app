@@ -120,9 +120,9 @@ input:-webkit-autofill:focus {
 .bttn-white {
     position: relative;
     background: rgb(170, 178, 55);
-    background: -webkit-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
-    background: -o-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
-    background: linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(136, 143, 24, 1) 0%, rgba(155, 109, 172, 1) 100%);
+    background: -o-linear-gradient(45deg, rgba(136, 143, 24, 1) 0%, rgba(155, 109, 172, 1) 100%);
+    background: linear-gradient(45deg, rgba(136, 143, 24, 1) 0%, rgba(155, 109, 172, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
     overflow: hidden;
     z-index: 1;
@@ -193,10 +193,10 @@ input:-webkit-autofill:focus {
     background: rgb(170, 178, 55);
     /* Old browsers */
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: -o-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
-    background: linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
+    background: -o-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
+    background: linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
     color: #ffffff;
@@ -253,10 +253,10 @@ input:-webkit-autofill:focus {
     background: rgb(170, 178, 55);
     /* Old browsers */
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: -o-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
-    background: linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
+    background: -o-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
+    background: linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
     opacity: 0.8;
@@ -283,7 +283,7 @@ input:-webkit-autofill:focus {
 }
 
 .blue-color {
-    color: #5e88fc;
+    color: #CED560;
 }
 
 .white-color {
@@ -317,9 +317,9 @@ input:-webkit-autofill:focus {
     width: 100%;
     height: 100%;
     background: rgb(170, 178, 55);
-    background: -webkit-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
-    background: -o-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
-    background: linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
+    background: -o-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
+    background: linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
     z-index: -1;
     opacity: 0;
@@ -357,7 +357,7 @@ input:-webkit-autofill:focus {
 
 .mainmenu-area .right-button a:hover {
     background-color: rgba(255, 255, 255, 1);
-    color: #768ede;
+    color: #AAB237;
 }
 
 .dropdown-item .dropdown-menu .dropdown-menu-right a:hover {
@@ -495,7 +495,7 @@ input:-webkit-autofill:focus {
 
 .feature-area {
     color: #ffffff;
-    background-color: #5e88fc;
+    background-color: #CED560;
     background-image: url('images/feature-bg.png');
     background-position: bottom -120px center;
     background-repeat: no-repeat;
@@ -533,15 +533,15 @@ input:-webkit-autofill:focus {
     background: rgb(170, 178, 55);
     /* Old browsers */
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: -o-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
-    background: linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
+    background: -o-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
+    background: linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
     overflow: hidden;
     z-index: 1;
-    color: #5e88fc;
+    color: #CED560;
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
@@ -621,7 +621,7 @@ input:-webkit-autofill:focus {
 }
 
 .team-box h4 {
-    color: #5e88fc;
+    color: #CED560;
     font-weight: 600;
     font-size: 20px;
 }
@@ -654,10 +654,10 @@ input:-webkit-autofill:focus {
     background: rgb(170, 178, 55);
     /* Old browsers */
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: -o-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
-    background: linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
+    background: -o-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
+    background: linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
@@ -765,10 +765,10 @@ input:-webkit-autofill:focus {
     background: rgb(170, 178, 55);
     /* Old browsers */
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: -o-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
-    background: linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
+    background: -o-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
+    background: linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
     position: relative;
@@ -873,7 +873,7 @@ input:-webkit-autofill:focus {
     outline: none;
     padding: 20px 30px 20px 60px;
     color: #434345;
-    border-left: 5px solid #5e88fc;
+    border-left: 5px solid #CED560;
     cursor: pointer;
     position: relative;
 }
@@ -907,7 +907,7 @@ input:-webkit-autofill:focus {
 .toggole-boxs div {
     background-color: #ffffff;
     padding: 0 30px 20px 60px;
-    border-left: 5px solid #5e88fc;
+    border-left: 5px solid #CED560;
 }
 
 /*-- 17. Subscribe-Form --*/
@@ -931,7 +931,7 @@ input:-webkit-autofill:focus {
     height: auto;
     padding: 15px 180px 15px 30px;
     border-radius: 100px;
-    border: 1px solid #5e88fc;
+    border: 1px solid #CED560;
 }
 
 .subscribe-form form .bttn-white {
@@ -960,10 +960,10 @@ input:-webkit-autofill:focus {
     background: rgb(170, 178, 55);
     /* Old browsers */
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: -o-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
-    background: linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
+    background: -o-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
+    background: linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
     border-radius: 100%;
@@ -990,7 +990,7 @@ input:-webkit-autofill:focus {
 }
 
 .footer-box:hover .box-icon {
-    color: #5e88fc;
+    color: #CED560;
 }
 
 .footer-box:hover .box-icon:before {
@@ -1000,7 +1000,7 @@ input:-webkit-autofill:focus {
 .footer-bottom {
     padding: 20px 0;
     background-color: #f5f6ff;
-    border-top: 1px solid #5e88fc;
+    border-top: 1px solid #CED560;
 }
 
 .footer-bottom .footer-menu ul {
@@ -1020,7 +1020,7 @@ input:-webkit-autofill:focus {
 }
 
 .footer-bottom .footer-menu ul li a:hover {
-    color: #5e88fc;
+    color: #CED560;
 }
 
 /*-- 19. ScrollUp-Button --*/
@@ -1033,7 +1033,7 @@ input:-webkit-autofill:focus {
     text-align: center;
     line-height: 60px;
     font-size: 30px;
-    color: #5e88fc;
+    color: #CED560;
 }
 
 .preloader {
@@ -1048,9 +1048,9 @@ input:-webkit-autofill:focus {
 
 .preloader span {
     background: rgb(170, 178, 55);
-    background: -webkit-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
-    background: -o-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
-    background: linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
+    background: -o-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
+    background: linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
     border-radius: 100%;
     height: 60px;
@@ -1119,9 +1119,9 @@ input:-webkit-autofill:focus {
 
 .site-header {
     background: rgb(170, 178, 55);
-    background: -webkit-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
-    background: -o-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
-    background: linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
+    background: -o-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
+    background: linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
     color: #ffffff;
     padding: 180px 0 120px;
@@ -1246,9 +1246,9 @@ input:-webkit-autofill:focus {
 
 .pagination .nav-links .page-numbers.current {
     background: rgb(170, 178, 55);
-    background: -webkit-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
-    background: -o-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
-    background: linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(106, 198, 240, 1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
+    background: -o-linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
+    background: linear-gradient(45deg, rgba(170, 178, 55, 1) 0%, rgba(155, 109, 172, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
     color: #ffffff;
 }
