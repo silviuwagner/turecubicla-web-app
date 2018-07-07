@@ -1,29 +1,32 @@
-<!-- templates/about.html -->
+<!-- templates/trail_delete.html -->
+<!-- /trails/... -->
 
 {% extends 'base.html' %}
 
-{% load crispy_forms_tags %}
-
-{% block title %}Trail Delete{% endblock %}
+{% block title %}Delete Trail{% endblock %}
 
 {% block content %}
 
 {% load static %}
 
-<section class="section-padding" id="about_page">
+{% load crispy_forms_tags %}
+  
+{% include "header.html" %}
+
+<section id="next-section" class="probootstrap-section">
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-10 col-md-offset-1">
-                <div class="page-title text-center">
-                    <h5 class="title">Trail Delete</h5>
-				</div>
-				
-				<h1>Delete</h1>
-				<form action="" method="post">
-					{% csrf_token %}
-					<p>Are you sure you want to delete "{{ trail.title }}"?</p>
-					<button class="btn btn-danger ml-2" type="submit">Confirm</button>
-				</form>
+        <div class="row mb60">
+            <div class="col-md-8 col-md-offset-2 probootstrap-animate">
+                <p>Are you sure do you want to delete trail "{{ trail.title }}"? <br /> There is no turning back.</p>
+                <form action="#" method="post" class="probootstrap-form">
+
+                    {% csrf_token %}
+                    {{ form|crispy }}
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" id="submit" name="submit" value="Delete trail">
+                </div>
+                </form>
 
             </div>
         </div>

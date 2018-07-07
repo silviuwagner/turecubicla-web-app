@@ -1,593 +1,221 @@
 <!-- templates/home.html -->
+<!-- / -->
 
 {% extends 'base.html' %}
 
-{% block title %}Amazing bike trails around Europe{% endblock %}
+{% block title %}Amazing bike trails{% endblock %}
 
 {% block content %}
 
 {% load static %}
-
-<!-- Home-Area -->
-<header class="home-area overlay" id="home_page">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 hidden-sm col-md-5">
-                <figure class="mobile-image wow fadeInUp" data-wow-delay="0.1s">
-                    <img src="{% static 'images/header-mobile-mountain.png' %}" alt="">
-                </figure>
-            </div>
-            <div class="col-xs-12 col-md-7">
-                <div class="space-80 hidden-xs"></div>
-                <h1 class="wow fadeInUp" data-wow-delay="0.2s">Discover amazing bike trails around Europe</h1>
-                <div class="space-20"></div>
-                <div class="desc wow fadeInUp" data-wow-delay="0.3s">
-                    <p>Cycletrails has awesome bike trails from cool people all around Europe that share the same passion for nature & bicycles and wanna have some fun exploring in an ecological way.</p>
-                </div>
-                <div class="space-20"></div>
-                <a href="{% url 'trail_list' %}" class="bttn-white wow fadeInUp" data-wow-delay="0.8s">Let's Ride <i class="fas fa-bicycle"></i></a>
-            </div>
-        </div>
-    </div>
-</header>
-<!-- Home-Area-End -->
-<!-- About-Area -->
-<section class="section-padding" id="about_page">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-10 col-md-offset-1">
-                <div class="page-title text-center">
-                    {% comment %} <img src="{% static 'images/about-logo.png' %}" alt="About Logo"> {% endcomment %}
-                    <h5 class="title">Staff Pick</h5>
-                    <div class="space-10"></div>
-                    <h3 class="blue-color">Most appreciated trails</h3>
-                    <div class="space-20"></div>
-
-                    <div class="row">
-
-                    
-                        {% for trail in object_list %}
-
-                            {% if trail.homepage_staff_pick %}
-
-                                <div class="item-container col-md-3" style="margin-bottom:30px">
-                                    
-                                    <div class="card" style="border-radius:5px;">
-                                        <img class="card-img-top" src="{{ trail.image.url }}" height="300px"/>
-            
-                                        <div class="card-header">
-                                            <span class="font-weight-bold"><a href="{% url 'trail_detail' trail.pk %}">{{ trail.title|slice:"25" }}</a></span> <br />
-                                            
-                                        </div>
-            
-                                        {% comment %} <ul class="list-group list-group-flush">
-                                                <li class="list-group-item"><i class="fas fa-ruler"></i> Distance &nbsp;&nbsp; <big>20</big> km</li>
-                                                <li class="list-group-item"><i class="fas fa-stopwatch"></i> Duration &nbsp;&nbsp; <big>3:40</big> hours</li>
-                                                <li class="list-group-item"><i class="fas fa-tachometer-alt"></i> Difficulty &nbsp;&nbsp; <big>Easy</big> </li>
-                                        </ul> {% endcomment %}
-            
-                                        <div class="card-body">
-                                                <!-- <small>
-                                                    <p><i class="fas fa-map-marker-alt"></i> Region <strong>{{ trail.region|slice:"10" }}</strong></p>
-                                                    <p><i class="fas fa-ruler"></i> Distance <strong>{{ trail.distance }} km</strong></p>
-                                                    <p><i class="fas fa-tachometer-alt"></i> Difficulty <strong>{{ trail.difficulty }}</strong></p>
-                                                </small> -->
-                                            {{ trail.about|truncatewords:6 }}
-                                            {% comment %} {{ trail.about|slice:"200" }} {% endcomment %}
-                                        </div>
-
-                                        <div class="card-footer">
-                                            <small class="text-muted">by <strong>{{ trail.author }}</strong> </small>
-                                        </div>
-
-                                    </div>
-                                </div>
-	
-                                {% if forloop.counter|divisibleby:4 %}
-                                    </div>
-
-                                    <div class="row">
-                                {% endif %}
-                                
-                            {% endif %}
-                            
-                        {% endfor %}
-                    
-                        
-                    {% comment %} <p>Lorem ipsum dolor sit amet, consectetur adipiing elit, sed do eiusmod tempor incididunt ut labore et laborused sed do eiusmod tempor incididunt ut labore et laborused.</p> {% endcomment %}
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-                <div class="col-xs-12 col-md-10 col-md-offset-1">
-                    <div class="page-title text-center">
-                        {% comment %} <img src="{% static 'images/about-logo.png' %}" alt="About Logo"> {% endcomment %}
-                        <h5 class="title">Regions</h5>
-                        <!-- <div class="space-10"></div>
-                        <h3 class="blue-color">Most appreciated trails</h3>
-                        <div class="space-20"></div> -->
-
-                        <div class="row">
-
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section>
-<!-- About-Area-End -->
-{% comment %} <!-- Progress-Area -->
-<section class="progress-area gray-bg" id="progress_page">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-6">
-                <div class="page-title section-padding">
-                    <h5 class="title wow fadeInUp" data-wow-delay="0.2s">Our Progress</h5>
-                    <div class="space-10"></div>
-                    <h3 class="dark-color wow fadeInUp" data-wow-delay="0.4s">Grat Application Ever</h3>
-                    <div class="space-20"></div>
-                    <div class="desc wow fadeInUp" data-wow-delay="0.6s">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiing elit, sed do eiusmod tempor incididunt ut labore et laborused sed do eiusmod tempor incididunt ut labore et laborused.</p>
-                    </div>
-                    <div class="space-50"></div>
-                    <a href="#" class="bttn-default wow fadeInUp" data-wow-delay="0.8s">Learn More</a>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-6">
-                <figure class="mobile-image">
-                    <img src="{% static 'images/progress-phone.png' %}" alt="">
-                </figure>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Progress-Area-End -->
-<!-- Video-Area -->
-<section class="video-area section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-6">
-                <div class="video-photo">
-                    <img src="{% static 'images/video-image.jpg' %}" alt="">
-                    <a href="https://www.youtube.com/watch?v=ScrDhTsX0EQ" class="popup video-button">
-                        <img src="{% static '' %}images/play-button.png" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-5 col-md-offset-1">
-                <div class="space-60 hidden visible-xs"></div>
-                <div class="page-title">
-                    <h5 class="title wow fadeInUp" data-wow-delay="0.2s">VIDEO FEATURES</h5>
-                    <div class="space-10"></div>
-                    <h3 class="dark-color wow fadeInUp" data-wow-delay="0.4s">Grat Application Ever</h3>
-                    <div class="space-20"></div>
-                    <div class="desc wow fadeInUp" data-wow-delay="0.6s">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiing elit, sed do eiusmod tempor incididunt ut labore et laborused sed do eiusmod tempor incididunt ut labore et laborused.</p>
-                    </div>
-                    <div class="space-50"></div>
-                    <a href="#" class="bttn-default wow fadeInUp" data-wow-delay="0.8s">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Video-Area-End -->
-<!-- Feature-Area -->
-<section class="feature-area section-padding-top" id="features_page">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-                <div class="page-title text-center">
-                    <h5 class="title">Features</h5>
-                    <div class="space-10"></div>
-                    <h3>Pwoerful Features As Always</h3>
-                    <div class="space-60"></div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="service-box wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="box-icon">
-                        <i class="lnr lnr-rocket"></i>
-                    </div>
-                    <h4>Fast &amp; Powerful</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-                <div class="space-60"></div>
-                <div class="service-box wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="box-icon">
-                        <i class="lnr lnr-paperclip"></i>
-                    </div>
-                    <h4>Easily Editable</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-                <div class="space-60"></div>
-                <div class="service-box wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="box-icon">
-                        <i class="lnr lnr-cloud-download"></i>
-                    </div>
-                    <h4>Cloud Storage</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-                <div class="space-60"></div>
-            </div>
-            <div class="hidden-xs hidden-sm col-md-4">
-                <figure class="mobile-image">
-                    <img src="{% static 'images/feature-image.png' %}" alt="Feature Photo">
-                </figure>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="service-box wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="box-icon">
-                        <i class="lnr lnr-clock"></i>
-                    </div>
-                    <h4>Easy Notifications</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-                <div class="space-60"></div>
-                <div class="service-box wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="box-icon">
-                        <i class="lnr lnr-laptop-phone"></i>
-                    </div>
-                    <h4>Fully Responsive</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-                <div class="space-60"></div>
-                <div class="service-box wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="box-icon">
-                        <i class="lnr lnr-cog"></i>
-                    </div>
-                    <h4>Editable Layout</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-                <div class="space-60"></div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Feature-Area-End -->
-<!-- Testimonial-Area -->
-<section class="testimonial-area" id="testimonial_page">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="page-title text-center">
-                    <h5 class="title">Testimonials</h5>
-                    <h3 class="dark-color">Our Client Loves US</h3>
-                    <div class="space-60"></div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="team-slide">
-                    <div class="team-box">
-                        <div class="team-image">
-                            <img src="{% static 'images/team-1.png' %}" alt="">
-                        </div>
-                        <h4>Ashekur Rahman</h4>
-                        <h6 class="position">Art Dirrector</h6>
-                        <p>Lorem ipsum dolor sit amet, conseg sed do eiusmod temput laborelaborus ed sed do eiusmod tempo.</p>
-                    </div>
-                    <div class="team-box">
-                        <div class="team-image">
-                            <img src="{% static 'images/team-2.jpg' %}" alt="">
-                        </div>
-                        <h4>Ashekur Rahman</h4>
-                        <h6 class="position">Art Dirrector</h6>
-                        <p>Lorem ipsum dolor sit amet, conseg sed do eiusmod temput laborelaborus ed sed do eiusmod tempo.</p>
-                    </div>
-                    <div class="team-box">
-                        <div class="team-image">
-                            <img src="{% static 'images/team-3.jpg' %}" alt="">
-                        </div>
-                        <h4>Ashekur Rahman</h4>
-                        <h6 class="position">Art Dirrector</h6>
-                        <p>Lorem ipsum dolor sit amet, conseg sed do eiusmod temput laborelaborus ed sed do eiusmod tempo.</p>
-                    </div>
-                    <div class="team-box">
-                        <div class="team-image">
-                            <img src="{% static 'images/team-1.png' %}" alt="">
-                        </div>
-                        <h4>Ashekur Rahman</h4>
-                        <h6 class="position">Art Dirrector</h6>
-                        <p>Lorem ipsum dolor sit amet, conseg sed do eiusmod temput laborelaborus ed sed do eiusmod tempo.</p>
-                    </div>
-                    <div class="team-box">
-                        <div class="team-image">
-                            <img src="{% static 'images/team-2.jpg' %}" alt="">
-                        </div>
-                        <h4>Ashekur Rahman</h4>
-                        <h6 class="position">Art Dirrector</h6>
-                        <p>Lorem ipsum dolor sit amet, conseg sed do eiusmod temput laborelaborus ed sed do eiusmod tempo.</p>
-                    </div>
-                    <div class="team-box">
-                        <div class="team-image">
-                            <img src="{% static 'images/team-3.jpg' %}" alt="">
-                        </div>
-                        <h4>Ashekur Rahman</h4>
-                        <h6 class="position">Art Dirrector</h6>
-                        <p>Lorem ipsum dolor sit amet, conseg sed do eiusmod temput laborelaborus ed sed do eiusmod tempo.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Testimonial-Area-End -->
-<!-- Gallery-Area -->
-<section class="gallery-area section-padding" id="gallery_page">
+  
+  <!-- START: section -->
+  <section class="probootstrap-intro" style="background-image: url({% static 'img/hero_bg_2.jpg' %});" data-stellar-background-ratio="0.5">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12 col-sm-6 gallery-slider">
-                <div class="gallery-slide">
-                    <div class="item"><img src="{% static 'images/gallery-1.jpg' %}" alt=""></div>
-                    <div class="item"><img src="{% static 'images/gallery-2.jpg' %}" alt=""></div>
-                    <div class="item"><img src="{% static 'images/gallery-3.jpg' %}" alt=""></div>
-                    <div class="item"><img src="{% static 'images/gallery-4.jpg' %}" alt=""></div>
-                    <div class="item"><img src="{% static 'images/gallery-1.jpg' %}" alt=""></div>
-                    <div class="item"><img src="{% static 'images/gallery-2.jpg' %}" alt=""></div>
-                    <div class="item"><img src="{% static 'images/gallery-3.jpg' %}" alt=""></div>
-                    <div class="item"><img src="{% static 'images/gallery-1.jpg' %}" alt=""></div>
-                    <div class="item"><img src="{% static 'images/gallery-2.jpg' %}" alt=""></div>
-                    <div class="item"><img src="{% static 'images/gallery-3.jpg' %}" alt=""></div>
-                    <div class="item"><img src="{% static 'images/gallery-4.jpg' %}" alt=""></div>
-                    <div class="item"><img src="{% static 'images/gallery-1.jpg' %}" alt=""></div>
-                    <div class="item"><img src="{% static 'images/gallery-2.jpg' %}" alt=""></div>
-                    <div class="item"><img src="{% static 'images/gallery-3.jpg' %}" alt=""></div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-5 col-lg-3">
-                <div class="page-title">
-                    <h5 class="white-color title wow fadeInUp" data-wow-delay="0.2s">Screenshots</h5>
-                    <div class="space-10"></div>
-                    <h3 class="white-color wow fadeInUp" data-wow-delay="0.4s">Screenshot 01</h3>
-                </div>
-                <div class="space-20"></div>
-                <div class="desc wow fadeInUp" data-wow-delay="0.6s">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiing elit, sed do eiusmod tempor incididunt ut labore et laborused sed do eiusmod tempor incididunt ut labore et laborused.</p>
-                </div>
-                <div class="space-50"></div>
-                <a href="#" class="bttn-default wow fadeInUp" data-wow-delay="0.8s">Learn More</a>
-            </div>
+      <div class="row">
+        <div class="col-md-7 probootstrap-intro-text">
+          <h1 class="probootstrap-animate">Amazing bike trails</h1>
+          <div class="probootstrap-subtitle probootstrap-animate">
+            <h2>Discover amazing bike trails from cool people all around Europe that share the same passion for nature & bicycling and stay fit</h2>
+          </div>
+          <p class="watch-intro probootstrap-animate"><a href="{% url 'trail_list' %}">Let's ride <i class="icon-bike"></i></a></p>
         </div>
+      </div>
     </div>
-</section>
-<!-- Gallery-Area-End -->
-<!-- How-To-Use -->
-<section class="section-padding">
+    <a class="probootstrap-scroll-down js-next" href="#next-section">Scroll down <i class="icon-chevron-down"></i></a>
+  </section>
+  <!-- END: section -->
+  
+
+  <section id="next-section">
+    <div class="container-fluid">
+      <div class="row probootstrap-gutter0">
+
+        {% for trail in object_list|slice:":6" %}
+          {% comment %} {% if trail.homepage_staff_pick %} {% endcomment %}
+
+            <div class="col-md-4 col-sm-6">
+              <a href="{% url 'trail_detail' trail.pk %}" class="probootstrap-hover-overlay">
+                <img src="{{ trail.image.url }}" class="img-responsive">
+                <div class="probootstrap-text-overlay">
+                  <h3>{{ trail.title|truncatewords:5 }}</h3>
+                  <p>
+                    <i class="fas fa-globe-asia"></i> {{ trail.region }} &nbsp;
+                    <i class="fas fa-ruler"></i> {{ trail.distance }} km &nbsp;
+                    <i class="fas fa-tachometer-alt"></i> {{ trail.difficulty }} 
+                  </p>
+                </div>
+              </a>
+            </div>
+
+            {% if forloop.counter|divisibleby:3 %}
+              </div>
+              <div class="row probootstrap-gutter0">
+            {% endif %}
+
+          {% comment %} {% endif %} {% endcomment %}
+        {% endfor %}
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- START: section -->
+  <section class="probootstrap-section">
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-6">
-                <div class="page-title">
-                    <h5 class="title wow fadeInUp" data-wow-delay="0.2s">Our features</h5>
-                    <div class="space-10"></div>
-                    <h3 class="dark-color wow fadeInUp" data-wow-delay="0.4s">Aour Approach of Design is Prety Simple and Clear</h3>
-                </div>
-                <div class="space-20"></div>
-                <div class="desc wow fadeInUp" data-wow-delay="0.6s">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiing elit, sed do eiusmod tempor incididunt ut labore et laborused sed do eiusmod tempor incididunt ut labore et laborused.</p>
-                </div>
-                <div class="space-50"></div>
-                <a href="#" class="bttn-default wow fadeInUp" data-wow-delay="0.8s">Learn More</a>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-5 col-md-offset-1">
-                <div class="space-60 hidden visible-xs"></div>
-                <div class="service-box wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="box-icon">
-                        <i class="lnr lnr-clock"></i>
-                    </div>
-                    <h4>Easy Notifications</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-                </div>
-                <div class="space-50"></div>
-                <div class="service-box wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="box-icon">
-                        <i class="lnr lnr-laptop-phone"></i>
-                    </div>
-                    <h4>Fully Responsive</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-                </div>
-                <div class="space-50"></div>
-                <div class="service-box wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="box-icon">
-                        <i class="lnr lnr-cog"></i>
-                    </div>
-                    <h4>Editable Layout</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-                </div>
-            </div>
+      <div class="row mb70">
+        <div class="col-md-4 probootstrap-animate">
+          <div class="probootstrap-box">
+              <div class="icon text-center"><i class="icon-tree"></i></div>
+              <h3 style="text-align: center;">Exploring nature</h3>
+              <p>Explore the beautiful nature lanscapes and discover new amazing places riding your bicycle.</p>
+          </div>
         </div>
+        <div class="col-md-4 probootstrap-animate">
+          <div class="probootstrap-box">
+              <div class="icon text-center"><i class="icon-bike"></i></div>
+              <h3 style="text-align: center;">Ecologic transport</h3>
+              <p>The bicycle is a very cheap ecologic mathod of transport that also offers lots of fun.</p>
+          </div>
+        </div>
+        <div class="col-md-4 probootstrap-animate">
+          <div class="probootstrap-box">
+              <div class="icon text-center"><i class="icon-man"></i></div>
+              <h3 style="text-align: center;">Staying fit</h3>
+              <p>Pedaling around keeps you fit and mentains your health in really good shape.</p>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
-<!-- How-To-Use-End -->
-<!-- Download-Area -->
-<div class="download-area overlay">
+  </section>
+  <!-- END: section -->
+
+
+  <!-- START: section -->
+  <section class="probootstrap-section probootstrap-section-colored">
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-6 hidden-sm">
-                <figure class="mobile-image">
-                    <img src="{% static 'images/download-image.png' %}" alt="">
-                </figure>
-            </div>
-            <div class="col-xs-12 col-md-6 section-padding">
-                <h3 class="white-color">Download The App</h3>
-                <div class="space-20"></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam possimus eaque magnam eum praesentium unde.</p>
-                <div class="space-60"></div>
-                <a href="#" class="bttn-white sq"><img src="{% static '' %}images/apple-icon.png" alt="apple icon"> Apple Store</a>
-                <a href="#" class="bttn-white sq"><img src="{% static '' %}images/play-store-icon.png" alt="Play Store Icon"> Play Store</a>
-            </div>
+      <div class="row">
+        <div class="col-lg-12 col-md-12 mb70 section-heading probootstrap-animate">
+          <h2 style="text-align: center;">Regions</h2>
+          <!-- <p class="lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p> -->
         </div>
+      </div>
+      <div class="row mb70">
+        <div class="col-md-4 probootstrap-animate">
+          <div class="probootstrap-block-image">
+            <figure><a href="#"><img src="{% static 'img/region_romania.jpg' %}"></a></figure>
+            <div class="text">
+              <h3 class="mb30"><a href="#">Romania</a></h3>
+              <p class="dark">Romania is a European country known for the forested region of Transylvania, ringed by the Carpathian Mountains.</p>
+              <!-- <p class="secondary-color rate"><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-half"></i></p>
+              <hr>
+              <p class="clearfix like"><a class="pull-left" href="#"><i class="icon-thumbs-up"></i> 5,216</a> <a class="pull-right" href="#"><i class="icon-thumbs-down"></i> 32</a></p> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 probootstrap-animate">
+          <div class="probootstrap-block-image">
+            <figure><a href="#"><img src="{% static 'img/region_hungary.jpg' %}"></a></figure>
+            <div class="text">
+              <h3 class="mb30"><a href="#">Hungary</a></h3>
+              <p class="dark">Hungary is a landlocked country in Central Europe. Its capital, Budapest, is bisected by the Danube River.</p>
+              <!-- <p class="secondary-color rate"><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-half"></i></p>
+              <hr>
+              <p class="clearfix like"><a class="pull-left" href="#"><i class="icon-thumbs-up"></i> 4,923</a> <a class="pull-right" href="#"><i class="icon-thumbs-down"></i> 12</a></p> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 probootstrap-animate">
+          <div class="probootstrap-block-image">
+            <figure><a href="#"><img src="{% static 'img/region_serbia.jpg' %}"></a></figure>
+            <div class="text">
+              <h3 class="mb30"><a href="#">Serbia</a></h3>
+              <p class="dark">Serbia is a country on southeast Europe's Balkan peninsula with northern plateaus and mountains with ski resorts to the south.</p>
+              <!-- <p class="secondary-color rate"><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-half"></i></p>
+              <hr>
+              <p class="clearfix like"><a class="pull-left" href="#"><i class="icon-thumbs-up"></i> 19,552</a> <a class="pull-right" href="#"><i class="icon-thumbs-down"></i> 7</a></p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4 probootstrap-animate">
+          <p class="text-center">
+            <a href="#" class="btn btn-ghost btn-ghost-white btn-lg btn-block" role="button">Explore other regions</a>
+          </p>
+        </div>
+      </div>
     </div>
-</div>
-<!-- Download-Area-End -->
-<!--Price-Area -->
-<section class="section-padding price-area" id="price_page">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="page-title text-center">
-                    <h5 class="title">Pricing Plan</h5>
-                    <h3 class="dark-color">Our Awesome Pricing Plan</h3>
-                    <div class="space-60"></div>
-                </div>
-            </div>
+  </section>
+  <!-- END: section -->
+
+
+
+  <div class="container probootstrap-footer">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="probootstrap-footer-widget">
+          <h3>About Biketrail</h3>
+          <p>Biketrail is all about enjoying nature and discovering new awesome places shared by other cool people by using the bicycle as an ecological way of transportation.</p>
+          <p><a href="{% url 'about' %}" class="link-with-icon">Learn More <i class=" icon-chevron-right"></i></a></p>
         </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-4">
-                <div class="price-box">
-                    <div class="price-header">
-                        <div class="price-icon">
-                            <span class="lnr lnr-rocket"></span>
-                        </div>
-                        <h4 class="upper">Free</h4>
-                    </div>
-                    <div class="price-body">
-                        <ul>
-                            <li>Easy Installations</li>
-                            <li>Unlimited support</li>
-                            <li>Uniqe Elements</li>
-                        </ul>
-                    </div>
-                    <div class="price-rate">
-                        <sup>&#36;</sup> <span class="rate">0</span> <small>/Month</small>
-                    </div>
-                    <div class="price-footer">
-                        <a href="#" class="bttn-white">Purchase</a>
-                    </div>
-                </div>
-                <div class="space-30 hidden visible-xs"></div>
-            </div>
-            <div class="col-xs-12 col-sm-4">
-                <div class="price-box">
-                    <div class="price-header">
-                        <div class="price-icon">
-                            <span class="lnr lnr-diamond"></span>
-                        </div>
-                        <h4 class="upper">Medium</h4>
-                    </div>
-                    <div class="price-body">
-                        <ul>
-                            <li>Easy Installations</li>
-                            <li>Unlimited support</li>
-                            <li>Free Forever</li>
-                        </ul>
-                    </div>
-                    <div class="price-rate">
-                        <sup>&#36;</sup> <span class="rate">49</span> <small>/Month</small>
-                    </div>
-                    <div class="price-footer">
-                        <a href="#" class="bttn-white">Purchase</a>
-                    </div>
-                </div>
-                <div class="space-30 hidden visible-xs"></div>
-            </div>
-            <div class="col-xs-12 col-sm-4">
-                <div class="price-box">
-                    <div class="price-header">
-                        <div class="price-icon">
-                            <span class="lnr lnr-pie-chart"></span>
-                        </div>
-                        <h4 class="upper">Business</h4>
-                    </div>
-                    <div class="price-body">
-                        <ul>
-                            <li>Easy Installations</li>
-                            <li>Unlimited support</li>
-                            <li>Free Forever</li>
-                        </ul>
-                    </div>
-                    <div class="price-rate">
-                        <sup>&#36;</sup> <span class="rate">99</span> <small>/Month</small>
-                    </div>
-                    <div class="price-footer">
-                        <a href="#" class="bttn-white">Purchase</a>
-                    </div>
-                </div>
-            </div>
+        <div class="probootstrap-footer-widget">
+          <h3>Connect with us</h3>
+          <ul class="probootstrap-footer-social">
+            <li><a href="https://www.twitter.com/biketrailapp" target="_blank"><i class="icon-twitter"></i></a></li>
+            <li><a href="https://www.facebook.com/biketrailapp" target="_blank"><i class="icon-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com/biketrailapp" target="_blank"><i class="icon-instagram2"></i></a></li>
+          </ul>
         </div>
+      </div>
+      <div class="col-md-4">
+        <div class="probootstrap-footer-widget">
+          <h3>Popular trails</h3>
+          <ul class="probootstrap-product-list">
+
+            {% for trail in object_list|slice:":3" %}
+              {% if trail.homepage_staff_pick %}
+
+                <li class="mb20">
+                  <a href="{% url 'trail_detail' trail.pk %}">
+                    <figure><img src="{{ trail.image.url }}" class="img-responsive"></figure>
+                    <div class="text">
+                      <h4>{{ trail.title|truncatewords:4 }}</h4>
+                      <p>{{ trail.about|truncatewords:8 }}</p>
+                    </div>
+                  </a>
+                </li>
+              
+              {% endif %}
+            {% endfor %}
+
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="probootstrap-footer-widget">
+          <h3>Recent trails</h3>
+          <ul class="probootstrap-product-list">
+
+              {% for trail in object_list|slice:":3" %}
+
+                <li class="mb20">
+                  <a href="{% url 'trail_detail' trail.pk %}">
+                    <figure><img src="{{ trail.image.url }}" class="img-responsive"></figure>
+                    <div class="text">
+                      <h4>{{ trail.title|truncatewords:4 }}</h4>
+                      <p>{{ trail.about|truncatewords:8 }}</p>
+                      <!-- <p class="secondary-color rate"><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-half"></i></p> -->
+                    </div>
+                  </a>
+                </li>
+
+              {% endfor %}
+
+            </ul>
+        </div>
+      </div>
     </div>
-</section>
-<!--Price-Area-End -->
-<!--Questions-Area -->
-<section id="questions_page" class="questions-area section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="page-title text-center">
-                    <h5 class="title">FAQ</h5>
-                    <h3 class="dark-color">Frequently Asked Questions</h3>
-                    <div class="space-60"></div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-6">
-                <div class="toggole-boxs">
-                    <h3>Faq first question goes here? </h3>
-                    <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    </div>
-                    <h3>About freewuent question goes here? </h3>
-                    <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    </div>
-                    <h3>Why more question goes here? </h3>
-                    <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    </div>
-                    <h3>What question goes here? </h3>
-                    <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-                <div class="space-20 hidden visible-xs"></div>
-                <div class="toggole-boxs">
-                    <h3>Faq second question goes here? </h3>
-                    <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    </div>
-                    <h3>Third faq question goes here? </h3>
-                    <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    </div>
-                    <h3>Why more question goes here? </h3>
-                    <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    </div>
-                    <h3>Seventh frequent question here? </h3>
-                    <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--Questions-Area-End -->
-<!-- Subscribe-Form -->
-<div class="subscribe-area section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-                <div class="subscribe-form text-center">
-                    <h3 class="blue-color">Subscribe for More Features</h3>
-                    <div class="space-20"></div>
-                    <form id="mc-form">
-                        <input type="email" class="control" placeholder="Enter your email" required="required" id="mc-email">
-                        <button class="bttn-white active" type="submit"><span class="lnr lnr-location"></span> Subscribe</button>
-                        <label class="mt10" for="mc-email"></label>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Subscribe-Form-Area --> {% endcomment %}
+  </div>
 
 {% endblock %}

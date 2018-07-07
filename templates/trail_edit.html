@@ -1,8 +1,7 @@
-<!-- templates/about.html -->
+<!-- templates/trail_edit.html -->
+<!-- /trails/... -->
 
 {% extends 'base.html' %}
-
-{% load crispy_forms_tags %}
 
 {% block title %}Edit Trail{% endblock %}
 
@@ -10,21 +9,24 @@
 
 {% load static %}
 
-<section class="section-padding" id="about_page">
+{% load crispy_forms_tags %}
+  
+{% include "header.html" %}
+
+<section id="next-section" class="probootstrap-section">
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-10 col-md-offset-1">
-                <div class="page-title text-center">
-                    <h5 class="title">Edit Trail</h5>
-				</div>
-                
-                <div class="login-form">
-                    <form action="" method="post" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        {{ form|crispy}}
-                        <button class="btn btn-info btn-block" type="submit">Update</button>
-                    </form>
+        <div class="row mb60">
+            <div class="col-md-8 col-md-offset-2 probootstrap-animate">
+                <p>Make your modifications for "{{ trail.title }}" bellow.</p>
+                <form action="#" method="post" class="probootstrap-form">
+
+                    {% csrf_token %}
+                    {{ form|crispy }}
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" id="submit" name="submit" value="Save changes">
                 </div>
+                </form>
 
             </div>
         </div>

@@ -1,0 +1,41 @@
+<!-- templates/home.html -->
+
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<section class="section-padding" id="about_page">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1">
+                <div class="page-title text-center">
+                    <h5 class="title">Sign Up</h5>
+				</div>
+				
+				{% comment %} <h2>Sign up</h2> {% endcomment %}
+
+				<div class="login-form">
+					<form method="post">
+				
+						{% csrf_token %}
+						{{ form|crispy }}
+						<button  class="btn btn-primary btn-block" type="submit">Sign up</button>
+				
+					</form>
+				</div>
+
+				<br />
+				<p style="text-align:center;">Already have an account? <a href="{% url 'login' %}">Login</a> instead.</p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

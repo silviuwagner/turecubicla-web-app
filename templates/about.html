@@ -1,55 +1,90 @@
 <!-- templates/about.html -->
+<!-- /about -->
 
 {% extends 'base.html' %}
 
-{% load crispy_forms_tags %}
-
-{% block title %}About Us{% endblock %}
+{% block title %}About{% endblock %}
 
 {% block content %}
 
 {% load static %}
+  
+{% include "header.html" %}
 
-<section class="section-padding" id="about_page">
+<section id="next-section" class="probootstrap-section">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-md-10 col-md-offset-1">
-                <div class="page-title text-center">
-                    <h5 class="title">About Us</h5>
-				</div>
+        <div class="col-lg-12 col-md-12 mb70 section-heading probootstrap-animate">
+            <h2>About Biketrail</h2>
+            <p class="lead">Biketrail is all about enjoying nature and discovering new awesome places shared by other cool people by using the bicycle as an ecological way of transportation.</p>
+        </div>
+        </div>
+        <div class="row mb50">
+        <div class="col-md-12">
+            <p><img src="{% static 'img/azugacampina_back.jpg' %}" class="img-responsive" style="margin-left: auto; margin-right: auto; display: block;"></p>
+        </div>
+        </div>
+        <!-- <div class="row">
+        <div class="col-md-6">
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+        </div>
+        <div class="col-md-6">
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+        </div>
+        </div> -->
+    </div>
+    </section>
 
-					<div class="row" style="margin-top:20px;">
-						<div class="col-xs-12">
-							<div class="team-slide">
-								<div class="team-box">
-									<div class="team-image">
-										<img src="{% static 'img/team/paulwagner.jpg' %}" alt="">
-									</div>
-									<h4>Paul Wagner</h4>
-									<h6 class="position">Developer</h6>
-									<p>He likes short walks with the bicycle in nature, he also uses the bicycle to commute in Timisoara, his hometown.</p>
-								</div>
-								<div class="team-box">
-									<div class="team-image">
-										<img src="{% static 'img/team/gabrielban.jpg' %}" alt="">
-									</div>
-									<h4>Gabriel Ban</h4>
-									<h6 class="position">Developer</h6>
-									<p>Comfort on the bike is his thing. His wish is to sit in an armchair and pedal along.</p>
-								</div>
-								<div class="team-box">
-									<div class="team-image">
-										<img src="{% static 'img/team/loreapachitei.jpg' %}" alt="">
-									</div>
-									<h4>Loredana Apachiței</h4>
-									<h6 class="position">Marketing</h6>
-									<p>She's really girly. Flowers on the bicycle and all that kind of extreme girly stuff.</p>
-								</div>
-							</div>
-						</div>
-					</div>
+    <section class="probootstrap-section probootstrap-border-top">
+    <div class="container">
+        <div class="row">
+        <div class="col-lg-12 col-md-12 mb70 section-heading probootstrap-animate">
+            <h2>The Team</h2>
+            <p class="lead">Our team is a passioned and dedicated team in love with bicycling surrounded by nature. They are the people that brough the Biketrail app alive with the plan to overtake Europe with amazing bike trails for everyone to enjoy.</p>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-md-3 col-sm-6 probootstrap-animate">
+            <img src="{% static 'img/team/paulwagner.jpg' %}" class="img-responsive">
+            <h3>Paul Wagner</h3>
+            <p>Developer</p>
+        </div>
+        <div class="col-md-3 col-sm-6 probootstrap-animate">
+            <img src="{% static 'img/team/loreapachitei.jpg' %}" class="img-responsive">  
+            <h3>Loredana Apachiței</h3>
+            <p>Marketing</p>
+        </div>
+        <div class="col-md-3 col-sm-6 probootstrap-animate">
+            <img src="{% static 'img/team/gabrielban.jpg' %}" class="img-responsive">
+            <h3>Gabrien Ban</h3>
+            <p>Developer</p>
+        </div>
+        <div class="col-md-3 col-sm-6 probootstrap-animate">
+            <img src="{% static 'img/team/cipriansava.jpg' %}" class="img-responsive">
+            <h3>Ciprian Sava</h3>
+            <p>Field agent</p>
+        </div>
+        </div>
+    </div>
+    </section>
 
-            </div>
+    
+
+    <!-- START: section -->
+    <section class="probootstrap-section probootstrap-section-colored">
+    <div class="container">
+        <div class="row text-center">
+        <div class="col-lg-8 col-md-offset-2 mb30 section-heading probootstrap-animate">
+            <h2>Wanna talk?</h2>
+            <p class="lead">If you want to give us feedback or just have a nice talk please press the button bellow.</p>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-md-4 col-md-offset-4 probootstrap-animate">
+            <p class="text-center">
+            <a href="mailto:info@biketrail.app" class="btn btn-ghost btn-ghost-white btn-lg btn-block" role="button">Contact Us</a>
+            </p>
+        </div>
         </div>
     </div>
 </section>

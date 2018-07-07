@@ -1,70 +1,28 @@
 <!-- templates/base.html -->
 
-<!doctype html>
-
 {% load static %}
 
-<html class="no-js" lang="zxx">
-
-<head>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-43247972-14"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-43247972-14');
-    </script>
-
-
-
-
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
-    {% comment %} <meta name="author" content="Sumon Rahman"> {% endcomment %}
-    <meta name="author" content="Paul Wagner">
-    <meta name="description" content="The coolest cycling trails from the nicest people all around Europe">
-    <meta name="keywords" content="cycling, trails, trail, nature, bicycle, bicyclist, sport">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Title -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{% endblock title %} - Biketrail</title>
-
-    <!-- Plugin-CSS -->
-    {% comment %} <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> {% endcomment %}
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/linearicons.css' %}">
-    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
-    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-
-    <!-- Main-Stylesheets -->
-    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <meta name="description" content="Discover amazing bike trails all around Europe!">
+    <meta name="keywords" content="bike, bicycle, cycling, cyclist, bicyclist, biking, nature, fun, sport, discovery, exercise, trail, trails, Europe, Romania, path, way, map, tourism, tourist">
+    
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet"> 
+    <link rel="stylesheet" href="{% static 'css/styles-merged.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
-    <script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
-    <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
 
-    <!-- Google -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYwNCsSaVyECn8RtHOCU5eUNS_pldEjo0&callback=initMap"></script>
-
-    <!-- MapBox -->
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.css' rel='stylesheet' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.css' rel='stylesheet' />
 
-    <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
-    <!-- Icons -->
     <link rel="apple-touch-icon" sizes="57x57" href="{% static 'img/icons/apple-icon-57x57.png' %}">
     <link rel="apple-touch-icon" sizes="60x60" href="{% static 'img/icons/apple-icon-60x60.png' %}">
     <link rel="apple-touch-icon" sizes="72x72" href="{% static 'img/icons/apple-icon-72x72.png' %}">
@@ -74,188 +32,91 @@
     <link rel="apple-touch-icon" sizes="144x144" href="{% static 'img/icons/apple-icon-144x144.png' %}">
     <link rel="apple-touch-icon" sizes="152x152" href="{% static 'img/icons/apple-icon-152x152.png' %}">
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/icons/apple-icon-180x180.png' %}">
-    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'img/icons/android-icon-192x192.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'img/icons/android-icon-192x192.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/icons/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="96x96" href="{% static 'img/icons/favicon-96x96.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/icons/favicon-16x16.png' %}">
     <link rel="manifest" href="{% static 'img/icons/manifest.json' %}">
-    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#CED560">
     <meta name="msapplication-TileImage" content="{% static 'img/icons/ms-icon-144x144.png' %}">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#CED560">
 
-</head>
+    <!--[if lt IE 9]>
+      <script src="js/vendor/html5shiv.min.js"></script>
+      <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
 
-<body data-spy="scroll" data-target=".mainmenu-area">
-    <!-- Preloader-content -->
+  <!-- START: header -->
+  <header role="banner" class="probootstrap-header">
+    <div class="container-fluid">
+        <a href="{% url 'home' %}" class="probootstrap-logo"><img src="{% static 'img/logo.png' %}" height="30px"/></a>
+        
+        <a href="#" class="probootstrap-burger-menu visible-xs" ><i>Menu</i></a>
+        <div class="mobile-menu-overlay"></div>
 
-    {% comment %} <div class="preloader">
-        <span><i class="lnr lnr-bicycle"></i></span>
-    </div> {% endcomment %}
-    <!-- MainMenu-Area -->
-    {% comment %} <nav class="mainmenu-area" data-spy="affix" data-offset-top="200"> {% endcomment %}
-    <nav class="mainmenu-area" data-spy="affix">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary_menu">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'img/header-logo-biketrail-new-small.png' %}" alt="Logo"></a>
-                
-                {% comment %} <a href="{% url 'trail_list' %}"><!-- <span class="lnr lnr-map-marker" style="font-size:1em"></span> --> <big>TRAILS</big></a>
-                <a href="{% url 'trail_new' %}"><span class="lnr lnr-plus-circle" style="font-size:1em;"></span></i></a> {% endcomment %}
-                
-            </div>
-            <div class="collapse navbar-collapse" id="primary_menu">
-                <!-- <ul class="nav navbar-nav mainmenu">
-                    <li><a href="{% url 'trail_list' %}">Trails</a></li>
-                    <li><a href="{% url 'trail_new' %}"> Add Trail</i></a></li>
-                    {% if user.is_authenticated %}
-                        <div style="margin-bottom: 10px;"></div>
-                        <li><a href="{% url 'user_trails' %}">View my trails</a></li>
-                        <li><a href="{% url 'password_change' %}">Change password</a></li>
-                        <li><a href="{% url 'logout' %}">Log out</a></li>
-                    {% else %}
-                        <div style="margin-bottom: 10px;"></div>
-                        <li><a href="{% url 'signup' %}">Join Us</a></li>
-                        <li><a href="{% url 'login' %}">Login</a></li>
-                    {% endif %} -->
-                    {% comment %} <li><a href="{% url 'trail_list' %}"> TRAILS</a></li>
-                    <li><a href="{% url 'trail_new' %}"><span class="lnr lnr-plus-circle"></span></i></a></li> {% endcomment %}
-                    {% comment %} <li><a href="#">Media</a></li> {% endcomment %}
-                </ul>
-                <div class="right-button hidden-xs">
+        <nav role="navigation" class="probootstrap-nav hidden-xs">
+          <ul class="probootstrap-main-nav">
+            
+            <li><a href="{% url 'trail_list' %}">Trails</a></li>
 
-                    <a href="{% url 'trail_list' %}">Trails</a>
-                    <a href="{% url 'trail_new' %}"><i class="fas fa-plus"></i></a>
+            {% if user.is_authenticated %}
 
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-
-                    {% if user.is_authenticated %}
+              <li><a href="#"><strong><i class="far fa-user"></i> {{ user.username }}</strong></a></li>
     
-                        <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-user"></i> {{ user.username }}</a>
-                        
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
-                            <a class="dropdown-item" href="{% url 'user_trails' %}" style="color:#CED560;"><i class="fas fa-map-marker"></i>&nbsp; View my trails</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{% url 'password_change' %}" style="color:#CED560;"><i class="fas fa-unlock"></i>&nbsp; Change password</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{% url 'logout' %}" style="color:#CED560;"><i class="fas fa-times-circle"></i>&nbsp; Log out</a>
-                        </div>
+            {% comment %} <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-user"></i> {{ user.username }}</a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+                <a class="dropdown-item" href="{% url 'user_trails' %}" style="color:#CED560;"><i class="fas fa-map-marker"></i>&nbsp; View my trails</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'password_change' %}" style="color:#CED560;"><i class="fas fa-unlock"></i>&nbsp; Change password</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'logout' %}" style="color:#CED560;"><i class="fas fa-times-circle"></i>&nbsp; Log out</a>
+            </div> {% endcomment %}
 
-                    {% else %}
+            {% else %}
 
-                        <a href="{% url 'signup' %}">Join Us</a>
-                        <a href="{% url 'login' %}">Login</a>
+              <li><a href="{% url 'signup' %}"><strong>Sign Up</strong></a></li>
+              <li><a href="{% url 'login' %}"><strong>Login</a></strong></li>
 
-                    {% endif %}
+            {% endif %}
 
-                </div>
-            </div>
-        </div>
-    </nav>
-    <!-- MainMenu-Area-End -->
-
-    <div style="margin-bottom:30px;"></div>
-
-    {% block content %}
-    {% endblock %}
-    
-    <!-- Footer-Area -->
-    {% comment %} <footer class="footer-area" id="contact_page">
-    <div class="section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="page-title text-center">
-                        <h5 class="title">Contact US</h5>
-                        <h3 class="dark-color">Find Us By Bellow Details</h3>
-                        <div class="space-60"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-4">
-                    <div class="footer-box">
-                        <div class="box-icon">
-                            <span class="lnr lnr-map-marker"></span>
-                        </div>
-                        <p>8-54 Paya Lebar Square <br /> 60 Paya Lebar Roa SG, Singapore</p>
-                    </div>
-                    <div class="space-30 hidden visible-xs"></div>
-                </div>
-                <div class="col-xs-12 col-sm-4">
-                    <div class="footer-box">
-                        <div class="box-icon">
-                            <span class="lnr lnr-phone-handset"></span>
-                        </div>
-                        <p>+65 93901336 <br /> +65 93901337</p>
-                    </div>
-                    <div class="space-30 hidden visible-xs"></div>
-                </div>
-                <div class="col-xs-12 col-sm-4">
-                    <div class="footer-box">
-                        <div class="box-icon">
-                            <span class="lnr lnr-envelope"></span>
-                        </div>
-                        <p>yourmail@gmail.com <br /> backpiper.com@gmail.com
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> {% endcomment %}
-    <!-- Footer-Bootom -->
-    <div class="footer-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-md-5">
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    <span>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Biketrail <br /> 
-                        {% comment %} <br /> Design by <a href="https://colorlib.com" target="_blank">Colorlib</a></span> {% endcomment %}
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    <div class="space-30 hidden visible-xs"></div>
-                </div>
-                <div class="col-xs-12 col-md-7">
-                    <div class="footer-menu">
-                        <ul>
-                            <li><a href="{% url 'about' %}">About</a></li>
-                            {% comment %} <li><a href="{% url 'support' %}">Support</a></li> {% endcomment %}
-                            {% comment %} <li><a href="#">Services</a></li>
-                            <li><a href="#">Features</a></li>
-                            <li><a href="#">Pricing</a></li>
-                            <li><a href="#">Testimonial</a></li> {% endcomment %}
-                            {% comment %} <li><a href="{% url 'email' %}">Contact</a></li> {% endcomment %}
-                            <li><a href="https://m.me/ciclotrasee" target="_blank"><i class="far fa-comment"></i> <strong>Contact us • Give feedback • Report bug</strong></a></li>
-                        </ul>
-                        {% comment %} <div style="text-align: right;">
-                            <a href="https://www.facebook.com/ciclotrasee" target="_blank"><i class="fab fa-facebook" style="font-size:1.7em;"></i></a>
-                            <a href="https://www.instagram.com/ciclotrasee" target="_blank"><i class="fab fa-instagram" style="font-size:1.7em;"></i></a>
-                            <a href="https://www.youtube.com/channel/UCCJxtC0TqD9s1P5WkfzZkbg" target="_blank"><i class="fab fa-youtube" style="font-size:1.7em;"></i></a>
-                        </div> {% endcomment %}
-                    </div>
-                </div>
-            </div>
-        </div>
+          </ul>
+          <div class="extra-text visible-xs">
+            <a href="#" class="probootstrap-burger-menu"><i>Menu</i></a>
+            <h5>Social</h5>
+            <ul class="social-buttons">
+              <li><a href="https://www.twitter.com/biketrailapp" target="_blank"><i class="icon-twitter"></i></a></li>
+              <li><a href="https://www.facebook.com/biketrailapp" target="_blank"><i class="icon-facebook"></i></a></li>
+              <li><a href="https://www.instagram.com/biketrailapp" target="_blank"><i class="icon-instagram2"></i></a></li>
+            </ul>
+          </div>
+        </nav>
     </div>
-    
-    <!-- Footer-Bootom-End -->
-    </footer>
-    <!-- Footer-Area-End -->
-    <!--Vendor-JS-->
-    <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
-    <script src="{% static 'js/vendor/jquery-ui.js' %}"></script>
-    <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
-    <!--Plugin-JS-->
-    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-    <script src="{% static 'js/contact-form.js' %}"></script>
-    <script src="{% static 'js/ajaxchimp.js' %}"></script>
-    <script src="{% static 'js/scrollUp.min.js' %}"></script>
-    <script src="{% static 'js/magnific-popup.min.js' %}"></script>
-    <script src="{% static 'js/wow.min.js' %}"></script>
-    <!--Main-active-JS-->
-    <script src="{% static 'js/main.js' %}"></script>
-</body>
+  </header>
+  <!-- END: header -->
 
+{% block content %}
+{% endblock %}
+
+  <!-- START: footer -->
+  <footer role="contentinfo" class="probootstrap-footer">
+    <div class="row ">
+      <div class="col-md-12 text-center">
+        <p>
+          <small>&copy; 2018 <a href="{% url 'home' %}">Biketrail</a></small><br />
+          <small>Made with <span style="color: red;">&hearts;</span> in Timisoara, Romania</small><br />
+          <small>by <a href="https://www.ciclotrasee.ro" target="_blank">Ciclotrasee</a></small>
+          <!-- <a href="#" class="js-backtotop">Back to top</a> -->
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- END: footer -->
+
+  <script src="{% static 'js/scripts.min.js' %}"></script>
+  <script src="{% static 'js/main.min.js' %}"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
+
+  </body>
 </html>
