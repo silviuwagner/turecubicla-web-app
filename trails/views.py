@@ -1,4 +1,4 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
@@ -8,7 +8,7 @@ from . import models
 class TrailCreateView(LoginRequiredMixin, CreateView):
 	model = models.Trail
 	template_name = 'trail_new.html'
-	fields = ['title', 'about', 'image', 'track']
+	fields = ['title', 'about', 'region', 'distance', 'difficulty', 'image', 'track']
 	login_url = 'login'
 
 	def form_valid(self, form):
@@ -30,7 +30,7 @@ class TrailDetailView(DetailView):
 
 class TrailUpdateView(LoginRequiredMixin, UpdateView):
 	model = models.Trail
-	fields = ['title', 'about', 'image', 'track']
+	fields = ['title', 'about', 'region', 'distance', 'difficulty', 'image', 'track']
 	template_name = 'trail_edit.html'
 	login_url = 'login'
 
