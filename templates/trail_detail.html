@@ -70,7 +70,8 @@
 
             <script src="{% static 'js/togeojson.js' %}"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-            <script src='https://api.mapbox.com/mapbox.js/plugins/turf/v2.0.2/turf.min.js'></script>
+            <!-- <script src='https://api.mapbox.com/mapbox.js/plugins/turf/v2.0.2/turf.min.js'></script>
+            <script src="https://raw.githubusercontent.com/mapbox/geojson-extent/master/geojson-extent.js"></script> -->
 
             <script>
                 var value;
@@ -101,7 +102,11 @@
                     var map = new mapboxgl.Map({
                         container: 'map',
                         style: 'mapbox://styles/mapbox/outdoors-v9',
+                        center: [25.00, 45.92],
+                        zoom: 5.2
                     });
+
+                    
 
                     //var bounds = turf.bbox(value);
                     //var bbox = turf.extent(value);
@@ -127,8 +132,8 @@
                                 "line-cap": "round"
                             },
                             "paint": {
-                                "line-color": "#000000",
-                                "line-width": 5
+                                "line-color": "#65277d",
+                                "line-width": 3.5
                             }
                         });
 
