@@ -1,1 +1,12 @@
 /cycletrails_net/settings.py
+/biketrailenv
+/pages/__pycache__/
+/pages/migrations/__pycache__/
+/static/_oldies_
+/staticfiles
+/trails/__pycache__/
+/trails/migrations/__pycache__/
+/users/__pycache__/
+/users/migrations/
+.DS_Store
+._.DS_Store
