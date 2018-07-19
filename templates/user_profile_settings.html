@@ -1,9 +1,9 @@
 <!-- templates/user_profile_trails.html -->
-<!-- /users/profile/trails -->
+<!-- /users/profile/settings -->
 
 {% extends 'base.html' %}
 
-{% block title %}Profile Settings{% endblock %}
+{% block title %}Edit profile{% endblock %}
 
 {% block content %}
 
@@ -18,7 +18,7 @@
             <div class="col-md" style="text-align:center;">
 
                     <a class="btn btn-primary" href="{% url 'profile_trails' %}"><i class="fas fa-map-marked-alt"></i> My trails</a>
-                    <a class="btn btn-primary active" href="{% url 'profile_settings' %}"><i class="fas fa-cog"></i> Settings</a>
+                    <a class="btn btn-primary active" href="{% url 'profile_settings' %}"><i class="fas fa-user-edit"></i> Edit profile</a>
                     <a class="btn btn-primary" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
 
             </div>

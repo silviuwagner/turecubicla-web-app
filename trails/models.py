@@ -2,10 +2,10 @@ from django.conf import settings
 from django.db import models
 from django.urls import reverse
 from .validators import validate_file_extension
-# from PIL import Image
-# from io import BytesIO
-# from django.core.files.uploadedfile import InMemoryUploadedFile
-# import sys
+from PIL import Image
+from io import BytesIO
+from django.core.files.uploadedfile import InMemoryUploadedFile
+import sys
 
 class Trail(models.Model):
 	title = models.CharField(max_length=255)
@@ -16,7 +16,29 @@ class Trail(models.Model):
 		on_delete=models.CASCADE,
 	)
 
-	region = models.CharField(max_length=100, default='Romania')
+	BANAT = "Banat"
+	BUCOVINA = "Bucovina"
+	CRISANA = "Crișana"
+	DOBROGEA = "Dobrogea"
+	MARAMURES = "Maramureș"
+	MOLDOVA = "Moldova"
+	MUNTENIA = "Muntenia"
+	OLTENIA = "Oltenia"
+	TRANSILVANIA = "Transilvania"
+
+	REGION_CHOICES = (
+		(BANAT, "Banat"),
+		(BUCOVINA, "Bucovina"),
+		(CRISANA, "Crișana"),
+		(DOBROGEA, "Dobrogea"),
+		(MARAMURES, "Maramureș"),
+		(MOLDOVA, "Moldova"),
+		(MUNTENIA, "Muntenia"),
+		(OLTENIA, "Oltenia"),
+		(TRANSILVANIA, "Transilvania"),
+	)
+
+	region = models.CharField(max_length=100, choices=REGION_CHOICES)
 	distance = models.PositiveIntegerField(default='0', verbose_name='Distance (in KM)')
 
 	EASY = "Easy"
@@ -37,23 +59,23 @@ class Trail(models.Model):
 
 	#image upload
 	image = models.ImageField(upload_to='image/', default='imagelink.jpg')
-	# def save(self):
-	# 	#Opening the uploaded image
-	# 	im = Image.open(self.image)
+	def save(self):
+		#Opening the uploaded image
+		im = Image.open(self.image)
 
-	# 	output = BytesIO()
+		output = BytesIO()
 
-	# 	#Resize/modify the image
-	# 	im = im.resize( (1920,1442) )
+		#Resize/modify the image
+		im = im.resize(1440, 1080)
 
-	# 	#after modifications, save it to the output
-	# 	im.save(output, format='JPEG', quality=100)
-	# 	output.seek(0)
+		#after modifications, save it to the output
+		im.save(output, format='JPEG', quality=20)
+		output.seek(0)
 
-	# 	#change the imagefield value to be the newley modifed image value
-	# 	self.image = InMemoryUploadedFile(output,'ImageField', "%s.jpg" %self.image.name.split('.')[0], 'image/jpeg', sys.getsizeof(output), None)
+		#change the imagefield value to be the newley modifed image value
+		self.image = InMemoryUploadedFile(output,'ImageField', "%s.jpg" %self.image.name.split('.')[0], 'image/jpeg', sys.getsizeof(output), None)
 
-	# 	super(Trail,self).save()
+		super(Trail,self).save()
 
 	image_uploaded_at = models.DateTimeField(auto_now_add=True)
 
