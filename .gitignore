@@ -11,3 +11,7 @@
 .DS_Store
 ._.DS_Store
 cycletrails_net.sock
+/cycletrails_net/__pycache__/
+/cycletrails_net/settings.py.save
+/trails/migrations/
+/cycletrails_net/._settings.py

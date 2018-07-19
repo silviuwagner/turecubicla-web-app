@@ -15,25 +15,15 @@
     <div class="container">
         <div class="row">
 
-            <a class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
-       
-            {% comment %} <nav class="navbar navbar-expand-sm bg-light">
+            <div class="col-md" style="text-align:center;">
 
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{%url 'logout'%}">Logout</a>
-                    </li>
-                </ul>
-            
-            </nav> {% endcomment %}
+                <a class="btn btn-primary" href="{% url 'profile_trails' %}"><i class="fas fa-map-marked-alt"></i> My trails</a>
+                <a class="btn btn-primary" href="{% url 'profile_settings' %}"><i class="fas fa-cog"></i> Settings</a>
+                <a class="btn btn-primary" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
 
-            {% comment %} <p>User Profile</p> {% endcomment %}
+            </div>
+
+            <p style="text-align:center; margin-top:50px;">Hello <strong>{{ user.username }}</strong>. This is your profile.</p>
 
         </div>
     </div>

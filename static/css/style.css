@@ -2136,3 +2136,16 @@ a.float:hover + div.label-container{
 #id_track {
   
 }
+
+.column {
+  float: left;
+  width: 21%;
+  margin: 23px;
+  
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+      width: 100%;
+  }
+}
