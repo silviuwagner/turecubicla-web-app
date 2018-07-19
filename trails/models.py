@@ -66,7 +66,7 @@ class Trail(models.Model):
 		output = BytesIO()
 
 		#Resize/modify the image
-		im = im.resize(1440, 1080)
+		im = im.resize((1440, 1080))
 
 		#after modifications, save it to the output
 		im.save(output, format='JPEG', quality=20)

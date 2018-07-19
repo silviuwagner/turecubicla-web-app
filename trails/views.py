@@ -38,7 +38,7 @@ class TrailDeleteView(LoginRequiredMixin, DeleteView):
 	model = models.Trail
 	template_name = 'trail_delete.html'
 	login_url = 'login'
-	success_url = reverse_lazy('trail_list')
+	success_url = reverse_lazy('profile_trails')
 
 class UserTrailsView(LoginRequiredMixin, ListView):
 	model = models.Trail
