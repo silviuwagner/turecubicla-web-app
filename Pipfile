@@ -13,6 +13,7 @@ pillow = "*"
 heroku = "*"
 django-heroku = "*"
 "kml2geojson" = "*"
+django-sites = "*"
 
 [dev-packages]
 pylint = "*"

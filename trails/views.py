@@ -2,13 +2,13 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-
 from . import models
+from . import youtube_embed
 
 class TrailCreateView(LoginRequiredMixin, CreateView):
 	model = models.Trail
 	template_name = 'trail_new.html'
-	fields = ['title', 'about', 'region', 'distance', 'difficulty', 'image', 'track']
+	fields = ['title', 'about', 'region', 'distance', 'difficulty', 'image', 'track', 'youtube_url']
 	login_url = 'login'
 
 	def form_valid(self, form):
@@ -28,9 +28,13 @@ class TrailDetailView(DetailView):
 	model = models.Trail
 	template_name = 'trail_detail.html'
 
+	# youtube_url = models.Trail.youtube_url
+
+	# video_embed(youtube_url)
+
 class TrailUpdateView(LoginRequiredMixin, UpdateView):
 	model = models.Trail
-	fields = ['title', 'about', 'region', 'distance', 'difficulty', 'image', 'track']
+	fields = ['title', 'about', 'region', 'distance', 'difficulty', 'image', 'track', 'youtube_url']
 	template_name = 'trail_edit.html'
 	login_url = 'login'
 
@@ -45,7 +49,7 @@ class UserTrailsView(LoginRequiredMixin, ListView):
 	template_name = 'user_trails.html'
 	login_url = 'login'
 
-success_url = reverse_lazy('trail_list')
+#success_url = reverse_lazy('trail_list')
 
 # class AboutUsView(DetailView):
 # 	template_name = 'about_us.html'

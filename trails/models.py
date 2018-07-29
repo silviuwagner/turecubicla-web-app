@@ -82,11 +82,18 @@ class Trail(models.Model):
 	#kml/gpx
 	track = models.FileField(upload_to='tracks/', default='tracklink.kml', verbose_name='Track (KML file only)', validators=[validate_file_extension])
 
+	youtube_url = models.URLField(blank=True, max_length=50, verbose_name="YouTube URL")
+
 	def __str__(self):
 		return self.title
 
 	def get_absolute_url(self):
 		return reverse('trail_detail', args=[str(self.id)])
+
+class TrailImage(models.Model):
+    trail = models.ForeignKey(Trail, on_delete=models.CASCADE, default=None, related_name='images')
+    images = models.ImageField(upload_to='image/',
+                             verbose_name='image',)
 
 class Comment(models.Model):
 	trail = models.ForeignKey(Trail, on_delete=models.CASCADE, related_name='comments')
