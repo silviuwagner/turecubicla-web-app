@@ -8,7 +8,7 @@ from . import youtube_embed
 class TrailCreateView(LoginRequiredMixin, CreateView):
 	model = models.Trail
 	template_name = 'trail_new.html'
-	fields = ['title', 'about', 'region', 'distance', 'difficulty', 'image', 'track', 'youtube_url']
+	fields = ['title', 'about', 'region', 'distance', 'difficulty', 'image', 'track']
 	login_url = 'login'
 
 	def form_valid(self, form):
@@ -18,9 +18,11 @@ class TrailCreateView(LoginRequiredMixin, CreateView):
 class TrailListView(ListView):
 	model = models.Trail
 	template_name = 'trail_list.html'
+	# paginate_by = 9
+
+	ordering = ['-date']
 
 	# queryset = Trail.objects.all().order_by('date')
-
 	# def get_queryset(self):
 	# 	return Trail.objects.all()
 
@@ -46,8 +48,9 @@ class TrailDeleteView(LoginRequiredMixin, DeleteView):
 
 class UserTrailsView(LoginRequiredMixin, ListView):
 	model = models.Trail
-	template_name = 'user_trails.html'
+	template_name = 'user_profile_trails.html'
 	login_url = 'login'
+	ordering = ['-date']
 
 #success_url = reverse_lazy('trail_list')
 
