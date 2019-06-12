@@ -14,22 +14,24 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-7 probootstrap-intro-text">
-          <h1 class="probootstrap-animate">Amazing bike trails</h1>
+          <h1 class="probootstrap-animate">Trasee de bicicletă</h1>
           <div class="probootstrap-subtitle probootstrap-animate">
-            <h2>Discover amazing bike trails from cool people all around Europe that share the same passion for nature & bicycling and stay fit</h2>
+            <h2>Descoperă trasee de bicicletă deosebite de la alți bicicliști din jurul țării. Explorează-le pe cele care îți plac și menține-te în formă!</h2>
           </div>
-          <p class="watch-intro probootstrap-animate"><a href="{% url 'trail_list' %}">Let's ride <i class="icon-bike"></i></a></p>
+          <p class="watch-intro probootstrap-animate" style="text-size:25px;"><a href="{% url 'trail_list' %}">Pornește la drum <i class="icon-bike"></i></a></p>
         </div>
       </div>
     </div>
-    <a class="probootstrap-scroll-down js-next" href="#next-section">Scroll down <i class="icon-chevron-down"></i></a>
+    <a class="probootstrap-scroll-down js-next" href="#next-section">Derulează în jos <i class="icon-chevron-down"></i></a>
   </section>
   <!-- END: section -->
   
 
-  <section id="next-section">
-    <div class="container-fluid">
+  <section class="probootstrap-section">
+    <div class="container">
       <div class="row probootstrap-gutter0">
+
+      <h1 style="text-align:center; margin-bottom: 50px; font-size:38px;">CELE MAI FAINE TRASEE</h1>
 
         {% for trail in object_list|slice:":6" %}
           {% comment %} {% if trail.homepage_staff_pick %} {% endcomment %}
@@ -67,22 +69,22 @@
         <div class="col-md-4 probootstrap-animate">
           <div class="probootstrap-box">
               <div class="icon text-center"><i class="icon-tree"></i></div>
-              <h3 style="text-align: center;">Exploring nature</h3>
-              <p>Explore the beautiful nature lanscapes and discover new amazing places riding your bicycle.</p>
+              <h3 style="text-align: center;">Explorează natura</h3>
+              <p style="text-align: center;">Explore the beautiful nature lanscapes and discover new amazing places riding your bicycle.</p>
           </div>
         </div>
         <div class="col-md-4 probootstrap-animate">
           <div class="probootstrap-box">
               <div class="icon text-center"><i class="icon-bike"></i></div>
-              <h3 style="text-align: center;">Ecologic transport</h3>
-              <p>The bicycle is a very cheap ecologic mathod of transport that also offers lots of fun.</p>
+              <h3 style="text-align: center;">Călătorește ecologic</h3>
+              <p style="text-align: center;">The bicycle is a very cheap ecologic mathod of transport that also offers lots of fun.</p>
           </div>
         </div>
         <div class="col-md-4 probootstrap-animate">
           <div class="probootstrap-box">
               <div class="icon text-center"><i class="icon-man"></i></div>
-              <h3 style="text-align: center;">Staying fit</h3>
-              <p>Pedaling around keeps you fit and mentains your health in really good shape.</p>
+              <h3 style="text-align: center;">Stai în formă</h3>
+              <p style="text-align: center;">Pedaling around keeps you fit and mentains your health in really good shape.</p>
           </div>
         </div>
       </div>

@@ -18,7 +18,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}{% endblock title %} - Biketrail</title>
+    <title>{% block title %}{% endblock title %} - Ciclotrasee</title>
     <meta name="description" content="Discover amazing bike trails all around Europe!">
     <meta name="keywords" content="bike, bicycle, cycling, cyclist, bicyclist, biking, nature, fun, sport, discovery, exercise, trail, trails, Europe, Romania, path, way, map, tourism, tourist">
     
@@ -64,13 +64,13 @@
     <div class="container-fluid">
         <a href="{% url 'home' %}" class="probootstrap-logo"><img src="{% static 'img/logo.png' %}" height="30px"/></a>
         
-        <a href="#" class="probootstrap-burger-menu visible-xs" ><i>Menu</i></a>
+        <a href="#" class="probootstrap-burger-menu visible-xs" ><i>Meniu</i></a>
         <div class="mobile-menu-overlay"></div>
 
         <nav role="navigation" class="probootstrap-nav hidden-xs">
           <ul class="probootstrap-main-nav">
             
-            <li><a href="{% url 'trail_list' %}">Trails</a></li>
+            <li><a href="{% url 'trail_list' %}">Trasee</a></li>
 
             {% if user.is_authenticated %}
 
@@ -87,8 +87,8 @@
 
             {% else %}
 
-              <li><a href="{% url 'login' %}"><i class="fas fa-user"></i> Login</a></li>
-              <li><a class="btn btn-ghost btn-ghost-white btn-xs" href="{% url 'signup' %}"><strong style="margin-left:10px;margin-right:10px;"><i class="fas fa-user-plus"></i> Join Us</strong></a></li>
+              <li><a href="{% url 'login' %}"><i class="fas fa-user"></i> Autentificare</a></li>
+              <li><a class="btn btn-ghost btn-ghost-white btn-xs" href="{% url 'signup' %}"><strong style="margin-left:10px;margin-right:10px;"><i class="fas fa-user-plus"></i> Înregistrare </strong></a></li>
 
             {% endif %}
 
@@ -116,10 +116,10 @@
       <div class="col-md-12 text-center">
         <p>
           <small>&copy; 2018 <a href="{% url 'home' %}">Biketrail</a></small><br />
-          <small>Crafted with <span style="color: red;">&hearts;</span> in Timisoara, Romania</small><br />
+          <small>Făurit cu <span style="color: red;">&hearts;</span> în Timișoara, Romania</small><br />
           <small>by <a href="https://www.ciclotrasee.ro" target="_blank">Ciclotrasee</a></small>
           <hr />
-          <p style="font-size:12px;">v0.0.38 <br /> PRE-ALPHA <br /> <a href="http://m.me/ciclotrasee" target="_blank"><i class="fas fa-comment"></i> Give us feedback</a></p>
+          <p style="font-size:12px;">v0.0.39 <br /> PRE-ALPHA <br /> <a href="http://m.me/ciclotrasee" target="_blank"><i class="fas fa-comment"></i> Give us feedback</a></p>
           <!-- <a href="#" class="js-backtotop">Back to top</a> -->
         </p>
       </div>
