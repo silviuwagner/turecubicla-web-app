@@ -71,6 +71,7 @@
           <ul class="probootstrap-main-nav">
             
             <li><a href="{% url 'trail_list' %}">Trasee</a></li>
+            {% comment %} <li><a href="#">Blog</a></li> {% endcomment %}
 
             {% if user.is_authenticated %}
 
@@ -87,7 +88,7 @@
 
             {% else %}
 
-              <li><a href="{% url 'login' %}"><i class="fas fa-user"></i> Autentificare</a></li>
+              <li><a href="{% url 'login' %}"><i class="fas fa-user"></i> Logare</a></li>
               <li><a class="btn btn-ghost btn-ghost-white btn-xs" href="{% url 'signup' %}"><strong style="margin-left:10px;margin-right:10px;"><i class="fas fa-user-plus"></i> Înregistrare </strong></a></li>
 
             {% endif %}
@@ -114,12 +115,13 @@
   <footer role="contentinfo" class="probootstrap-footer">
     <div class="row">
       <div class="col-md-12 text-center">
+        <p><strong>Disclaimer:</strong> Informaţiile furnizate pe acest site au un caracter pur orientativ. Nu ne asumăm răspunderea pentru pagubele produse prin utilizarea acestora.</p>
         <p>
-          <small>&copy; 2018 <a href="{% url 'home' %}">Biketrail</a></small><br />
+          <small>&copy; 2015 - 2019 <a href="{% url 'home' %}">Ciclotrasee</a></small><br />
           <small>Făurit cu <span style="color: red;">&hearts;</span> în Timișoara, Romania</small><br />
-          <small>by <a href="https://www.ciclotrasee.ro" target="_blank">Ciclotrasee</a></small>
+          {% comment %} <small>by <a href="https://www.ciclotrasee.ro" target="_blank">Ciclotrasee</a></small> {% endcomment %}
           <hr />
-          <p style="font-size:12px;">v0.0.39 <br /> PRE-ALPHA <br /> <a href="http://m.me/ciclotrasee" target="_blank"><i class="fas fa-comment"></i> Give us feedback</a></p>
+          <p style="font-size:12px;">v0.0.40 <br /> PRE-ALPHA <br /> <a href="http://m.me/ciclotrasee" target="_blank"><i class="fas fa-comment"></i> Give us feedback</a></p>
           <!-- <a href="#" class="js-backtotop">Back to top</a> -->
         </p>
       </div>

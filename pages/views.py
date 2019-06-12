@@ -11,6 +11,7 @@ from trails import models
 class HomePageView(ListView):
     model = models.Trail
     template_name = 'home.html'
+    ordering = ['-date']
 
 class AboutPageView(TemplateView):
 	template_name = 'about.html'
