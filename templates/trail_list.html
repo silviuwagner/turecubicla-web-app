@@ -2,22 +2,31 @@
 <!-- /trails -->
 
 {% extends 'base.html' %}
+{% load bootstrap %}
+{% load crispy_forms_tags %}
 
 {% block title %}Trails{% endblock %}
 
 {% block content %}
 
+
+
 {% load static %}
   
 {% include "header.html" %}
 
-<h1 style="text-align:center;margin-top:70px;margin-bottom:-40px;">Ultimele trasee adăugate</h1>
+<form method="get" style="text-align:center;margin-top:50px;padding-left:300px;padding-right:300px;">
+    {{ filter.form }}
+    <button style="" type="submit" class="btn btn-primary">Caută</button>
+</form>
+
+{% comment %} <h1 style="text-align:center;margin-top:70px;margin-bottom:-40px;">Ultimele trasee adăugate</h1> {% endcomment %}
 
 <section id="next-section" class="probootstrap-section">
     <div class="container">
         <div class="row">
 
-            {% for trail in object_list %}
+            {% for trail in filter.qs %}
 
                 <div class="col-md-4 col-sm-6 probootstrap-animate">
                     <div class="probootstrap-block-image">

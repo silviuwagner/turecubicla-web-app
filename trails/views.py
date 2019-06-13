@@ -4,6 +4,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from . import models
 from . import youtube_embed
+from .filters import TrailFilter
 
 class TrailCreateView(LoginRequiredMixin, CreateView):
 	model = models.Trail
@@ -18,13 +19,14 @@ class TrailCreateView(LoginRequiredMixin, CreateView):
 class TrailListView(ListView):
 	model = models.Trail
 	template_name = 'trail_list.html'
-	# paginate_by = 9
 
 	ordering = ['-date']
+	paginate_by = 9
 
-	# queryset = Trail.objects.all().order_by('date')
-	# def get_queryset(self):
-	# 	return Trail.objects.all()
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		context['filter'] = TrailFilter(self.request.GET, queryset=self.get_queryset())	
+		return context
 
 class TrailDetailView(DetailView):
 	model = models.Trail

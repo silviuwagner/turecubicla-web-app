@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic import TemplateView
 
-def blog(request):
-    return HttpResponse('<h1>Blog homepage</h1>')
+class BlogPage(TemplateView):
+	template_name = 'blog.html'
