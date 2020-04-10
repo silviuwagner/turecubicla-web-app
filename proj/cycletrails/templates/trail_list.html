@@ -1,0 +1,67 @@
+<!-- templates/trail_list.html -->
+<!-- /trails -->
+
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Trails{% endblock %}
+
+{% block content %}
+
+
+
+{% load static %}
+  
+{% include "header.html" %}
+
+<form method="get" style="text-align:center;margin-top:50px;padding-left:300px;padding-right:300px;">
+    {{ filter.form }}
+    <button style="margin-left:20px;" type="submit" class="btn btn-primary">Caută</button>
+</form>
+
+{% comment %} <h1 style="text-align:center;margin-top:70px;margin-bottom:-40px;">Ultimele trasee adăugate</h1> {% endcomment %}
+
+<section id="next-section" class="probootstrap-section">
+    <div class="container">
+        <div class="row">
+
+            {% for trail in filter.qs %}
+
+                <div class="col-md-4 col-sm-6 probootstrap-animate">
+                    <div class="probootstrap-block-image">
+                    <figure><a href="{% url 'trail_detail' trail.pk %}"><img src="{{ trail.image.url }}"></a></figure>
+                        <div class="text">
+                            <h3 class="mb30"><a href="{% url 'trail_detail' trail.pk %}">{{ trail.title|truncatewords:3 }}</a></h3>
+                            <p class="dark">
+                                <i class="fas fa-globe-asia"></i> {{ trail.region }} &nbsp;
+                                <i class="fas fa-ruler"></i> {{ trail.distance }} km &nbsp;
+                                <i class="fas fa-tachometer-alt"></i> {{ trail.difficulty }}
+                            </p>
+                            <p class="dark">{{ trail.about|truncatewords:10 }}</p>
+                            <small class="clearfix like"><span class="pull-left"><i class="far fa-user"></i> {{ trail.author }}</span> <span class="pull-right"><i class="far fa-calendar"></i> {{ trail.date|date:"j M, Y" }}</span></small>
+                        </div>
+                    </div>
+                </div>
+
+                {% if forloop.counter|divisibleby:3 %}
+                    </div>
+                    <div class="row">
+                {% endif %}
+
+            {% endfor %}
+
+            <a href="{% url 'trail_new' %}" class="float">
+                <i class="fas fa-plus my-float"></i>
+            </a>
+            <div class="label-container">
+                <div class="label-text">Adaugă traseu nou</div>
+            </div>
+        
+        </div>
+        
+        <div class="clearfix visible-sm-block"></div>
+
+    </div>
+</section>
+
+{% endblock %}

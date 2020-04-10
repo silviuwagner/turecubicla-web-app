@@ -1,0 +1,46 @@
+<!-- templates/registration/login.html -->
+<!-- /users/login -->
+
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+  
+{% include "header.html" %}
+
+<h2 style="text-align:center;">Login into your account</h2>
+
+<section id="next-section" class="probootstrap-section">
+    <div class="container">
+        <div class="row mb60">
+            <div class="col-md-8 col-md-offset-2 probootstrap-animate">
+                <form action="#" method="post" class="probootstrap-form">
+
+                    {% csrf_token %}
+                    {{ form|crispy }}
+
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" id="submit" name="submit" value="Login">
+                    </div>
+                </form>
+
+                {% comment %} <p style="text-align:center;">
+                    <a class="btn btn-primary" href=""><i class="fab fa-google"></i> Sign in with Google</a>
+                </p> {% endcomment %}
+			
+                <p style="text-align:center;">
+                    Dont't have an account? <a href="{% url 'signup' %}">Join us</a> <br />
+                    Forgot your password? <a href="{% url 'password_reset' %}">Reset it</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

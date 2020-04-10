@@ -1,0 +1,32 @@
+<!-- templates/user_profile.html -->
+<!-- /users/profile -->
+
+{% extends 'base.html' %}
+
+{% block title %}My Profile{% endblock %}
+
+{% block content %}
+
+{% load static %}
+  
+{% include "header.html" %}
+
+<section id="next-section" class="probootstrap-section">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md" style="text-align:center;">
+
+                <a class="btn btn-primary" href="{% url 'profile_trails' %}"><i class="fas fa-map-marked-alt"></i> My trails</a>
+                <a class="btn btn-primary" href="{% url 'profile_settings' %}"><i class="fas fa-user-edit"></i> Edit profile</a>
+                <a class="btn btn-primary" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+
+            </div>
+
+            <p style="text-align:center; margin-top:50px;">Hello <strong>{{ user.username }}</strong>. This is your profile.</p>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

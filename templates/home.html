@@ -27,8 +27,8 @@
   <!-- END: section -->
   
   <!-- START: section -->
-  <section class="probootstrap-section" style="margin-bottom:-180px;">
-    <div class="container">
+  <section class="probootstrap-section" style="margin-bottom:-180px;" id="next-section">
+    <div class="container" >
       <div class="row mb70">
         <div class="col-md-4 probootstrap-animate">
           <div class="probootstrap-box">
@@ -199,26 +199,35 @@
     <div class="row">
       <div class="col-md-4">
         <div class="probootstrap-footer-widget">
-          <h3>Despre Ciclotrasee</h3>
-          <p>Ciclotrasee este un site dedicat traseelor de bicicletă din afara oraşelor pe diverse tipuri de drumuri atent studiate și notate pentru o informare cât mai bună a celui interesat în a le parcurge.</p>
+          <h3><img src="{% static 'img/logo-dark.png' %}" width="119" alt="" class="footer-widget__logo"></h3>
+          
+                                {% comment %} <p class="footer-widget__contact"><a href="tel:0726478179">0726 478 179</a></p> {% endcomment %}
+                                <!-- /.footer-widget__contact -->
+                                <p class="footer-widget__contact">Email: <a href="javascript:location='mailto:\u0069\u006e\u0066\u006f\u0040\u0074\u0075\u0072\u0065\u0063\u0075\u0062\u0069\u0063\u006c\u0061\u002e\u0072\u006f';void 0"><script type="text/javascript">document.write('\u0069\u006e\u0066\u006f\u0040\u0074\u0075\u0072\u0065\u0063\u0075\u0062\u0069\u0063\u006c\u0061\u002e\u0072\u006f')</script></a>
+          <p><strong><a href="http://cs.tibiscus.ro" target="_blank">Clubul Sportiv Tibiscus</a></strong><br />300559 Timişoara<br />str. Lascar Catargiu nr. 4-6</p>
           <p><a href="{% url 'about' %}" class="link-with-icon">Mai multe detalii <i class=" icon-chevron-right"></i></a></p>
         </div>
         <div class="probootstrap-footer-widget">
           <h3>Social</h3>
           <ul class="probootstrap-footer-social">
-            <li><a href="https://www.twitter.com/ciclotrasee" target="_blank"><i class="icon-twitter"></i></a></li>
-            <li><a href="https://www.facebook.com/ciclotrasee" target="_blank"><i class="icon-facebook"></i></a></li>
-            <li><a href="https://www.instagram.com/ciclotrasee" target="_blank"><i class="icon-instagram2"></i></a></li>
+            <li><a href="https://www.facebook.com/turecubicla" target="_blank"><i class="icon-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com/turecubicla" target="_blank"><i class="icon-instagram2"></i></a></li>
           </ul>
         </div>
       </div>
       <div class="col-md-4">
         <div class="probootstrap-footer-widget">
           
-          <h3>Link-uri folositoare</h3>
-          <a href="{% url 'blog-home' %}"><h4>Blog</h4></a>
+          <h3>Meniu</h3>
+          <a href="#"><h4>Blog</h4></a>
           <a href="{% url 'about' %}"><h4>Despre noi</h4></a>
-          <a href="mailto:ciclotrasee.ro@gmail.com"><h4>Contact</h4></a>
+          {% if user.is_authenticated %}
+            <a href="{% url 'profile' %}"><h4><i class="fas fa-user-circle"></i> {{ user.username }}</h4></a>
+          {% else %}
+            <a href="{% url 'login' %}"><h4><i class="fas fa-user"></i> Logare</h4></a>
+            <a href="{% url 'signup' %}"><h4><i class="fas fa-user-plus"></i> Înregistrare</h4></a>
+          {% endif %}
+          <a href="https://www.turecubicla.ro"><h4><i class="fas fa-sign-out-alt"></i> Ieși din aplicație</h4></a>
 
           {% comment %} <li class="mb20">
             <a href="#">Despre noi</a>

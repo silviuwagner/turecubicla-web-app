@@ -1,0 +1,37 @@
+<!-- templates/trail_new.html -->
+<!-- /trails/... -->
+
+{% extends 'base.html' %}
+
+{% block title %}Add new trail{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+  
+{% include "header.html" %}
+
+<section id="next-section" class="probootstrap-section">
+    <div class="container">
+        <div class="row mb60">
+            <div class="col-md-8 col-md-offset-2 probootstrap-animate">
+                <p>Împărtășește un traseu.</p>
+                {% comment %} <p>Share one of your lovely trails so other people can enjoy them as well. <br /> Don't forget that sharing is indeed caring. &#9786; </p> {% endcomment %}
+                <form action="" method="post" class="probootstrap-form" enctype="multipart/form-data">
+
+                    {% csrf_token %}
+                    {{ form|crispy }}
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" id="submit" name="submit" value="Add trail">
+                </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

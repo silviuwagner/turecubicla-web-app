@@ -1,0 +1,93 @@
+<!-- templates/about.html -->
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+
+<section id="team" class="pb-5">
+    <div class="container">
+		<h5 class="section-title h1">Our team</h5>
+		<big>Our team is formed of passionate people who are very passionate about cycling.</h3></big>
+		
+        <div class="row" style="margin-top:20px;">
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="{% static 'img/team/paulwagner.jpg' %}" alt="card image"></p>
+                                    <h4 class="card-title">Paul Wagner</h4>
+                                    <p class="card-text">Coordinator</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./Team member -->
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="{% static 'img/team/cipriansava.jpg' %}" alt="card image"></p>
+                                    <h4 class="card-title">Ciprian Sava</h4>
+                                    <p class="card-text">Trail inspector</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./Team member -->
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="{% static 'img/team/loreapachitei.jpg' %}" alt="card image"></p>
+                                    <h4 class="card-title">Loredana Apachiței</h4>
+                                    <p class="card-text">PR</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./Team member -->
+			<!-- Team member -->
+			
+		
+            <div class="col-xs-12 col-sm-6 col-md-4" style="margin-top:20px;">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="{% static 'img/team/gabrielban.jpg' %}" alt="card image"></p>
+                                    <h4 class="card-title">Gabriel Ban</h4>
+                                    <p class="card-text">Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./Team member -->
+           
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

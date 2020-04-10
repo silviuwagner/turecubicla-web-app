@@ -1,0 +1,39 @@
+<!-- templates/email.html -->
+
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<section class="section-padding" id="about_page">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1">
+                <div class="page-title text-center">
+                    <h5 class="title">Contact Us</h5>
+				</div>
+				
+				{% comment %} <h2>Sign up</h2> {% endcomment %}
+
+				<div class="login-form">
+					<form method="post">
+						{% csrf_token %}
+						{{ form|crispy }}
+						<div class="form-actions">
+						<button type="submit" class="btn btn-primary btn-block">Send</button>
+						</div>
+					</form>
+				</div>
+
+				
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

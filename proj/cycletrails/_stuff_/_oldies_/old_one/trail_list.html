@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Trails{% endblock %}
+
+{% block content %}
+	{% for trail in object_list %}
+		<div class="card">
+
+			<img class="card-img-top" src="{{ trail.image.url }}" height="300px"/>
+
+			<div class="card-header">
+				<span class="font-weight-bold"><a href="{% url 'trail_detail' trail.pk %}">{{ trail.title }}</a></span> <br />
+				<small class="text-muted"><i class="far fa-user"></i> {{ trail.author }} &nbsp;&nbsp; <i class="fas fa-calendar-alt"></i> {{ trail.date }}</small>
+			</div>
+
+			<ul class="list-group list-group-flush">
+					<li class="list-group-item"><i class="fas fa-ruler"></i> Distance &nbsp;&nbsp; <big>20</big> km</li>
+					<li class="list-group-item"><i class="fas fa-stopwatch"></i> Duration &nbsp;&nbsp; <big>3:40</big> hours</li>
+					<li class="list-group-item"><i class="fas fa-tachometer-alt"></i> Difficulty &nbsp;&nbsp; <big>Easy</big> </li>
+			</ul>
+
+			<div class="card-body">
+				{{ trail.about }}
+			</div>
+
+			{% comment %} <div class="card-footer">
+				<small class="text-muted"><i class="far fa-user"></i> {{ trail.author }} |  <i class="fas fa-calendar-alt"></i> {{ trail.date }}</small>
+			</div> {% endcomment %}
+
+			{% comment %} <div class="card-footer text-center text-muted">
+				<a href="{% url 'trail_edit' trail.pk %}">Edit</a> | 
+				<a href="{% url 'trail_delete' trail.pk %}">Delete</a>
+			</div> {% endcomment %}
+
+		</div>
+
+		<br />
+	{% endfor %}
+{% endblock content %}

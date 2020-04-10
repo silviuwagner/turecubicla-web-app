@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Add new trail{% endblock %}
+
+{% block content %}
+
+	<h1>New trail</h1>
+	<form action="" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		{% comment %} {{ form.as_p }} {% endcomment %}
+		{{ form|crispy }}
+		<button class="btn btn-success ml-2" type="submit">Post</button>
+	</form>
+
+{% endblock %}
