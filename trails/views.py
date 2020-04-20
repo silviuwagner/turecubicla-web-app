@@ -5,6 +5,13 @@ from django.urls import reverse_lazy
 from . import models
 from . import youtube_embed
 from .filters import TrailFilter
+from rest_framework import viewsets
+from .serializers import TrailSerializer
+from .models import Trail
+
+class TrailView(viewsets.ModelViewSet):
+	queryset = Trail.objects.all()
+	serializer_class = TrailSerializer
 
 class TrailCreateView(LoginRequiredMixin, CreateView):
 	model = models.Trail
