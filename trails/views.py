@@ -16,7 +16,7 @@ class TrailView(viewsets.ModelViewSet):
 class TrailCreateView(LoginRequiredMixin, CreateView):
 	model = models.Trail
 	template_name = 'trail_new.html'
-	fields = ['title', 'about', 'region', 'distance', 'difficulty', 'image', 'track']
+	fields = ['id','title', 'about', 'region', 'distance', 'difficulty', 'image', 'track']
 	login_url = 'login'
 
 	def form_valid(self, form):
